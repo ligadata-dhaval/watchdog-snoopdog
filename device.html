@@ -21,14 +21,14 @@
     <!-- new css-->
     <link href="css/device2.css" media="screen"
           rel="stylesheet">
-
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
 </head>
 <body id="meet-nest-thermostat" class="thermostat meet" ng-controller="DeviceController as dc">
 <div id="main">
     <header id="main-header" class="header-bar content" data-swiftype-index="false">
         <div class="container"><a id="home-link" href="index.html" class="logo" title="Appliance Watchdog"
                                   itemprop="url">
-            <img src="images/logo.jpg"></a>
+            <img src="images/logo.jpg" style="margin-top: 25px" width="200px"></a>
             <nav id="main-nav" data-swiftype-index="false" title="Main&nbsp;navigation">
                 <ul class="nav-list container" role="menubar">
 
@@ -72,9 +72,9 @@
                         <div class="icon-grid">
                             <div class="col-lg-3 col-md-3 col-sm-6 " ng-repeat="appliance in appliances | filter: checked==false" style="padding: 10px">
 
-                                <a style="font-family: 'Playfair Display', serif;font-size: 20px; color: grey" href="{{appliance.timeline}}" ng-click="storeAppId(appliance.channel_name)">{{appliance.device_name}}</a><br>
+                                <a style="font-family: 'Quicksand', sans-serif;font-size: 20px; color: grey" href="{{appliance.timeline}}" ng-click="storeAppId(appliance.channel_name)">{{appliance.device_name}}</a><br>
                                 <br><br>
-                                <img  class="svg" src="{{appliance.image}}"  style="margin: 10px">
+                                <img  class="svg" src="{{appliance.image}}" width="200px" style="margin: 10px">
                             </div>
                         </div>
                     </div>
@@ -256,7 +256,7 @@
     </footer>
 </div>
 <!--scripts-->
-<script src="js/fb.js"></script>
+
 <script src="js/app.js"></script>
 <script src="js/controllers.js"></script>
 <script src="js/services.js"></script>

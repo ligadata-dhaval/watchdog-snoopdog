@@ -29,10 +29,10 @@ angular.module('watchdog')
         $scope.add=function(appliance){
            var app=angular.copy(appliance);
             if(app.device_type=="mobile"){
-                app.image="images/mobile.png"
+                app.image="images/mobile.jpg"
                 app.timeline="mobiletimeline.html"
             }else if(app.device_type=="tv"){
-                app.image="images/tv.png"
+                app.image="images/tv.jpg"
                 app.timeline="appliancetimeline.html"
             }
             app.checked=false;
