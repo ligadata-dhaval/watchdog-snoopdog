@@ -1,0 +1,1563 @@
+.home .hero-banner {
+    background-position: center top;
+    padding-bottom: 30px;
+    border-bottom: 10px solid #fff
+}
+
+.home .hero-banner .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1
+}
+
+.home .hero-banner .text-block {
+    position: relative;
+    z-index: 2
+}
+
+.home .hero-banner .hero-title {
+    display: block;
+    margin-bottom: 5px;
+    font-family: "Akkurat Light", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 26px;
+    font-size: 2.6rem;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    font-size: 30px;
+    font-size: 3rem;
+    color: #3d4247
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner .hero-title {
+        font-size: 38px;
+        font-size: 3.8rem
+    }
+}
+
+.home .hero-banner .hero-title:hover {
+    color: #00AFD8
+}
+
+.home .hero-banner .watch-video {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-family: "Akkurat", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 21px;
+    font-size: 2.1rem;
+    letter-spacing: -1px;
+    font-size: 20px;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0)
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner .watch-video {
+        font-size: 30px;
+        font-size: 3rem
+    }
+}
+
+.home .hero-banner .watch-video:before, .home .hero-banner .watch-video:after {
+    width: 20px;
+    height: 20px;
+    top: 4px
+}
+
+.home .hero-banner .watch-video:before {
+    margin-left: 0;
+    margin-right: 5px
+}
+
+.home .hero-banner .watch-video:after {
+    margin-left: 5px;
+    margin-right: 0
+}
+
+.home .hero-banner .watch-video:hover {
+    color: #00AFD8
+}
+
+.home .hero-banner .nl-button {
+    font-size: 15px;
+    font-size: 1.5rem;
+    padding: 9px 35px 7px
+}
+
+.home .hero-banner .nl-button:lang(fr-CA) {
+    padding-left: 15px;
+    padding-right: 15px
+}
+
+@media screen and (max-width: 767px) {
+    .home .hero-banner {
+        text-align: center
+    }
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner {
+        box-sizing: initial;
+        padding-bottom: 50px
+    }
+
+    .home .hero-banner .hero-title {
+        font-size: 36px;
+        font-size: 3.6rem;
+        letter-spacing: -2px;
+        margin-bottom: 10px
+    }
+
+    .home .hero-banner .watch-video {
+        font-family: "Akkurat Light", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 28px
+    }
+
+    .home .hero-banner .watch-video:before, .home .hero-banner .watch-video:after {
+        width: 28px;
+        height: 28px;
+        top: 5px
+    }
+
+    .home .hero-banner .watch-video:before {
+        margin-left: 0;
+        margin-right: 6px
+    }
+
+    .home .hero-banner .watch-video:after {
+        margin-left: 6px;
+        margin-right: 0
+    }
+
+    .home .hero-banner .nl-button {
+        font-size: 16px;
+        font-size: 1.6rem;
+        padding: 12px 50px 11px
+    }
+}
+
+.home .hero-banner.thermostat {
+    background-image: url("../images/thermostat.jpg");
+    background-repeat: no-repeat;
+    background-size: 768px 846px;
+    padding-top: 300px
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat {
+        background-image: url("../images/thermostat.jpg")
+    }
+}
+
+.home .hero-banner.thermostat:lang(en-CA) {
+    background-image: url("../images/thermostat.jpg");
+    background-repeat: no-repeat;
+    background-size: 768px 846px
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(en-CA) {
+        background-image: url("../images/thermostat.jpg")
+    }
+}
+
+.home .hero-banner.thermostat:lang(fr-CA) {
+    background-image: url("/../images/thermostat.jpg");
+    background-repeat: no-repeat;
+    background-size: 768px 846px
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(fr-CA) {
+        background-image: url("/images/homepage/hero/thermostat/cool/celsius/fr/ca/mobile_2x-b565365949.jpg")
+    }
+}
+
+.home .hero-banner.thermostat:lang(en-GB) {
+    background-image: url("/images/homepage/hero/thermostat/heat/celsius/en/mobile-27714ea6cf.jpg");
+    background-repeat: no-repeat;
+    background-size: 768px 846px
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(en-GB) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/en/mobile_2x-afe966cb48.jpg")
+    }
+}
+
+.home .hero-banner.thermostat:lang(en-IE) {
+    background-image: url("/images/homepage/hero/thermostat/heat/celsius/en/mobile-27714ea6cf.jpg");
+    background-repeat: no-repeat;
+    background-size: 768px 846px
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(en-IE) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/en/mobile_2x-afe966cb48.jpg")
+    }
+}
+
+.home .hero-banner.thermostat:lang(fr-BE) {
+    background-image: url("/images/homepage/hero/thermostat/heat/celsius/fr/mobile-4ecba600a5.jpg");
+    background-repeat: no-repeat;
+    background-size: 768px 846px
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(fr-BE) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/fr/mobile_2x-014d005fc9.jpg")
+    }
+}
+
+.home .hero-banner.thermostat:lang(fr-FR) {
+    background-image: url("/images/homepage/hero/thermostat/heat/celsius/fr/mobile-4ecba600a5.jpg");
+    background-repeat: no-repeat;
+    background-size: 768px 846px
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(fr-FR) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/fr/mobile_2x-014d005fc9.jpg")
+    }
+}
+
+.home .hero-banner.thermostat:lang(nl-BE) {
+    background-image: url("/images/homepage/hero/thermostat/heat/celsius/nl/mobile-8560594f57.jpg");
+    background-repeat: no-repeat;
+    background-size: 768px 846px
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(nl-BE) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/nl/mobile_2x-49fe6910f1.jpg")
+    }
+}
+
+.home .hero-banner.thermostat:lang(nl-NL) {
+    background-image: url("/images/homepage/hero/thermostat/heat/celsius/nl/mobile-8560594f57.jpg");
+    background-repeat: no-repeat;
+    background-size: 768px 846px
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(nl-NL) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/nl/mobile_2x-49fe6910f1.jpg")
+    }
+}
+
+.home .hero-banner.thermostat .incentive-block {
+    border-color: #99A4AF;
+    margin-top: 25px;
+    padding-top: 20px;
+    padding-bottom: 0;
+    text-align: left
+}
+
+.home .hero-banner.thermostat .incentive-block [class*="icon-piggy-bank-outline"] {
+    padding-right: 0;
+    margin-right: 0;
+    width: 36px;
+    height: 24px
+}
+
+.home .hero-banner.thermostat .incentive-block .thermostat-hero-incentive-link {
+    color: #3d4247;
+    font-family: "Akkurat Light", Helvetica, Arial, "Lucida Grande", sans-serif;
+    padding-left: 51px
+}
+
+@media screen and (max-width: 767px) {
+    .home .hero-banner.thermostat .text-block {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 360px
+    }
+
+    .home .hero-banner.thermostat .text-block:lang(fr-CA) {
+        max-width: 380px
+    }
+
+    .home .hero-banner.thermostat .text-block:lang(nl-BE) {
+        max-width: 420px
+    }
+
+    .home .hero-banner.thermostat .text-block:lang(nl-NL) {
+        max-width: 420px
+    }
+
+    .home .hero-banner.thermostat .incentives {
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto
+    }
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner.thermostat {
+        background-image: url("../images/thermostat.jpg");
+        background-repeat: no-repeat;
+        background-size: 1040px 420px;
+        padding: 0;
+        height: 420px
+    }
+}
+
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat {
+        background-image: url("../images/thermostat.jpg")
+    }
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner.thermostat:lang(en-CA) {
+        background-image: url("/images/homepage/hero/thermostat/cool/celsius/en/tablet-ea0c5d2889.jpg");
+        background-repeat: no-repeat;
+        background-size: 1040px 420px
+    }
+}
+
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(en-CA) {
+        background-image: url("/images/homepage/hero/thermostat/cool/celsius/en/tablet_2x-a8c6385516.jpg")
+    }
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner.thermostat:lang(fr-CA) {
+        background-image: url("/images/homepage/hero/thermostat/cool/celsius/fr/ca/tablet-449e3d5ab5.jpg");
+        background-repeat: no-repeat;
+        background-size: 1040px 420px
+    }
+}
+
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(fr-CA) {
+        background-image: url("/images/homepage/hero/thermostat/cool/celsius/fr/ca/tablet_2x-bb325de3bb.jpg")
+    }
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner.thermostat:lang(en-GB) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/en/tablet-83439fff9d.jpg");
+        background-repeat: no-repeat;
+        background-size: 1040px 420px
+    }
+}
+
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(en-GB) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/en/tablet_2x-78bdc83d47.jpg")
+    }
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner.thermostat:lang(en-IE) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/en/tablet-83439fff9d.jpg");
+        background-repeat: no-repeat;
+        background-size: 1040px 420px
+    }
+}
+
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(en-IE) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/en/tablet_2x-78bdc83d47.jpg")
+    }
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner.thermostat:lang(fr-BE) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/fr/tablet-81181411cc.jpg");
+        background-repeat: no-repeat;
+        background-size: 1040px 420px
+    }
+}
+
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(fr-BE) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/fr/tablet_2x-3468b49435.jpg")
+    }
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner.thermostat:lang(fr-FR) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/fr/tablet-81181411cc.jpg");
+        background-repeat: no-repeat;
+        background-size: 1040px 420px
+    }
+}
+
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(fr-FR) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/fr/tablet_2x-3468b49435.jpg")
+    }
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner.thermostat:lang(nl-BE) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/nl/tablet-3e75ac5b2e.jpg");
+        background-repeat: no-repeat;
+        background-size: 1040px 420px
+    }
+}
+
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(nl-BE) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/nl/tablet_2x-0a929f046b.jpg")
+    }
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner.thermostat:lang(nl-NL) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/nl/tablet-3e75ac5b2e.jpg");
+        background-repeat: no-repeat;
+        background-size: 1040px 420px
+    }
+}
+
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(nl-NL) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/nl/tablet_2x-0a929f046b.jpg")
+    }
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner.thermostat .text-block {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 36.5%
+    }
+
+    .home .hero-banner.thermostat:lang(fr-BE) .watch-video {
+        font-size: 28px;
+        font-size: 2.8rem
+    }
+
+    .home .hero-banner.thermostat:lang(fr-CA) .watch-video {
+        font-size: 28px;
+        font-size: 2.8rem
+    }
+
+    .home .hero-banner.thermostat:lang(fr-FR) .watch-video {
+        font-size: 28px;
+        font-size: 2.8rem
+    }
+}
+
+@media (min-width: 1040px) {
+    .home .hero-banner.thermostat {
+        background-image: url("../images/thermostat.jpg");
+        background-repeat: no-repeat;
+        background-size: 1280px 600px;
+        height: 600px
+    }
+}
+
+@media (min-width: 1040px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1040px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat {
+        background-image: url("../images/thermostat.jpg")
+    }
+}
+
+@media (min-width: 1040px) {
+    .home .hero-banner.thermostat:lang(en-CA) {
+        background-image: url("../images/thermostat.jpg");
+        background-repeat: no-repeat;
+        background-size: 1280px 600px
+    }
+}
+
+@media (min-width: 1040px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1040px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(en-CA) {
+        background-image: url("../images/thermostat.jpg")
+    }
+}
+
+@media (min-width: 1040px) {
+    .home .hero-banner.thermostat:lang(fr-CA) {
+        background-image: url("../images/thermostat.jpg");
+        background-repeat: no-repeat;
+        background-size: 1280px 600px
+    }
+}
+
+@media (min-width: 1040px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1040px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(fr-CA) {
+        background-image: url("../images/thermostat.jpg")
+    }
+}
+
+@media (min-width: 1040px) {
+    .home .hero-banner.thermostat:lang(en-GB) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/en/desktop-c2028ecd17.jpg");
+        background-repeat: no-repeat;
+        background-size: 1280px 600px
+    }
+}
+
+@media (min-width: 1040px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1040px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(en-GB) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/en/desktop_2x-b1dbb0f382.jpg")
+    }
+}
+
+@media (min-width: 1040px) {
+    .home .hero-banner.thermostat:lang(en-IE) {
+        background-image: url("/images/homepage/hero/thermostat/heat/celsius/en/desktop-c2028ecd17.jpg");
+        background-repeat: no-repeat;
+        background-size: 1280px 600px
+    }
+}
+
+@media (min-width: 1040px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1040px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(en-IE) {
+        background-image: url("../images/thermostat.jpg")
+    }
+}
+
+@media (min-width: 1040px) {
+    .home .hero-banner.thermostat:lang(fr-BE) {
+        background-image: url("../images/thermostat.jpg");
+        background-repeat: no-repeat;
+        background-size: 1280px 600px
+    }
+}
+
+@media (min-width: 1040px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1040px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(fr-BE) {
+        background-image: url("../images/thermostat.jpg")
+    }
+}
+
+@media (min-width: 1040px) {
+    .home .hero-banner.thermostat:lang(fr-FR) {
+        background-image: url("../images/thermostat.jpg");
+        background-repeat: no-repeat;
+        background-size: 1280px 600px
+    }
+}
+
+@media (min-width: 1040px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1040px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(fr-FR) {
+        background-image: url("../images/thermostat.jpg")
+    }
+}
+
+@media (min-width: 1040px) {
+    .home .hero-banner.thermostat:lang(nl-BE) {
+        background-image: url("../images/thermostat.jpg");
+        background-repeat: no-repeat;
+        background-size: 1280px 600px
+    }
+}
+
+@media (min-width: 1040px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1040px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(nl-BE) {
+        background-image: url("../images/thermostat.jpg")
+    }
+}
+
+@media (min-width: 1040px) {
+    .home .hero-banner.thermostat:lang(nl-NL) {
+        background-image: url("../images/thermostat.jpg");
+        background-repeat: no-repeat;
+        background-size: 1280px 600px
+    }
+}
+
+@media (min-width: 1040px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1040px) and (min-resolution: 144dpi) {
+    .home .hero-banner.thermostat:lang(nl-NL) {
+        background-image: url("../images/thermostat.jpg")
+    }
+}
+
+@media (min-width: 1040px) {
+    .home .hero-banner.thermostat .text-block {
+        width: 31%
+    }
+}
+
+.home .hero-banner.protect {
+    background-image: url("../images/thermostat.jpg");
+    background-repeat: no-repeat;
+    background-size: 768px 540px;
+    padding-top: 275px
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .hero-banner.protect {
+        background-image: url("../images/thermostat.jpg")
+    }
+}
+
+.home .hero-banner.protect .watch-video, .home .hero-banner.protect .watch-video:hover {
+    color: #7B858E
+}
+
+.home .hero-banner.protect .watch-video:before, .home .hero-banner.protect .watch-video:after {
+    background-image: url("/images/global/icons/watch-video-gray-7b858e-ddb003efb5.svg")
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner.protect {
+        background-image: url("/images/homepage/hero/protect/desktop-5562ebcca3.jpg");
+        background-repeat: no-repeat;
+        background-size: 1280px 596px;
+        padding-top: 325px;
+        text-align: center
+    }
+}
+
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi) {
+    .home .hero-banner.protect {
+        background-image: url("/images/homepage/hero/protect/desktop_2x-7d8676a0f7.jpg")
+    }
+}
+
+@media (min-width: 1040px) {
+    .home .hero-banner.protect .hero-title {
+        font-size: 45px;
+        font-size: 4.5rem
+    }
+}
+
+.home .hero-banner.nestcam {
+    background-image: url("/images/homepage/hero/nestcam/mobile-65958c100e.jpg");
+    background-repeat: no-repeat;
+    background-size: 768px 600px;
+    padding-top: 360px
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .hero-banner.nestcam {
+        background-image: url("/images/homepage/hero/nestcam/mobile_2x-c27dc52129.jpg")
+    }
+}
+
+.home .hero-banner.nestcam .cta-block .price {
+    display: inline-block;
+    margin-right: 0.3em;
+    vertical-align: middle;
+    font-size: 20px;
+    font-size: 2rem
+}
+
+@media screen and (max-width: 767px) {
+    .home .hero-banner.nestcam {
+        background-color: #e8d4ae
+    }
+
+    .home .hero-banner.nestcam .text-block {
+        max-width: 256px;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .home .hero-banner.nestcam .text-block:lang(fr-BE) {
+        max-width: 360px
+    }
+
+    .home .hero-banner.nestcam .text-block:lang(fr-CA) {
+        max-width: 360px
+    }
+
+    .home .hero-banner.nestcam .text-block:lang(fr-FR) {
+        max-width: 360px
+    }
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner.nestcam {
+        background-image: url("/images/homepage/hero/nestcam/tablet-cc5b847d56.jpg");
+        background-repeat: no-repeat;
+        background-size: 896px 420px;
+        background-position: right center;
+        padding: 0;
+        height: 420px
+    }
+}
+
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi) {
+    .home .hero-banner.nestcam {
+        background-image: url("/images/homepage/hero/nestcam/tablet_2x-59abadad95.jpg")
+    }
+}
+
+@media (min-width: 768px) {
+    .home .hero-banner.nestcam .text-block {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 36.5%
+    }
+
+    .home .hero-banner.nestcam .text-block:lang(nl-BE) br {
+        display: none
+    }
+
+    .home .hero-banner.nestcam .text-block:lang(nl-NL) br {
+        display: none
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1039px) {
+    .home .hero-banner.nestcam .watch-video:lang(fr-BE) {
+        font-size: 24px
+    }
+
+    .home .hero-banner.nestcam .watch-video:lang(fr-BE):before, .home .hero-banner.nestcam .watch-video:lang(fr-BE):after {
+        width: 24px;
+        height: 24px;
+        top: 3px
+    }
+
+    .home .hero-banner.nestcam .watch-video:lang(fr-BE):before {
+        margin-left: 0;
+        margin-right: 3px
+    }
+
+    .home .hero-banner.nestcam .watch-video:lang(fr-BE):after {
+        margin-left: 3px;
+        margin-right: 0
+    }
+
+    .home .hero-banner.nestcam .watch-video:lang(fr-CA) {
+        font-size: 24px
+    }
+
+    .home .hero-banner.nestcam .watch-video:lang(fr-CA):before, .home .hero-banner.nestcam .watch-video:lang(fr-CA):after {
+        width: 24px;
+        height: 24px;
+        top: 3px
+    }
+
+    .home .hero-banner.nestcam .watch-video:lang(fr-CA):before {
+        margin-left: 0;
+        margin-right: 3px
+    }
+
+    .home .hero-banner.nestcam .watch-video:lang(fr-CA):after {
+        margin-left: 3px;
+        margin-right: 0
+    }
+
+    .home .hero-banner.nestcam .watch-video:lang(fr-FR) {
+        font-size: 24px
+    }
+
+    .home .hero-banner.nestcam .watch-video:lang(fr-FR):before, .home .hero-banner.nestcam .watch-video:lang(fr-FR):after {
+        width: 24px;
+        height: 24px;
+        top: 3px
+    }
+
+    .home .hero-banner.nestcam .watch-video:lang(fr-FR):before {
+        margin-left: 0;
+        margin-right: 3px
+    }
+
+    .home .hero-banner.nestcam .watch-video:lang(fr-FR):after {
+        margin-left: 3px;
+        margin-right: 0
+    }
+}
+
+@media (min-width: 1040px) {
+    .home .hero-banner.nestcam {
+        background-image: url("/images/homepage/hero/nestcam/desktop-5f8bd341ca.jpg");
+        background-repeat: no-repeat;
+        background-size: 1280px 600px;
+        height: 600px
+    }
+}
+
+@media (min-width: 1040px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1040px) and (min-resolution: 144dpi) {
+    .home .hero-banner.nestcam {
+        background-image: url("/images/homepage/hero/nestcam/desktop_2x-2d2acc5e84.jpg")
+    }
+}
+
+@media (min-width: 1040px) {
+    .home .hero-banner.nestcam .text-block:lang(fr-CA) {
+        width: 31%
+    }
+
+    .home .hero-banner.nestcam .text-block:lang(nl-BE) {
+        width: 29%
+    }
+
+    .home .hero-banner.nestcam .text-block:lang(nl-NL) {
+        width: 29%
+    }
+
+    .home .hero-banner.nestcam .hero-title {
+        font-size: 40px;
+        font-size: 4rem
+    }
+
+    .home .hero-banner.nestcam .cta-block .price {
+        font-size: 24px;
+        font-size: 2.4rem
+    }
+}
+
+@media (min-width: 1300px) {
+    .home .hero-banner.nestcam .text-block:lang(fr-CA) {
+        width: 33%
+    }
+
+    .home .hero-banner.nestcam .hero-title {
+        font-size: 45px;
+        font-size: 4.5rem
+    }
+
+    .home .hero-banner.nestcam .hero-title:lang(fr-CA) {
+        font-size: 40px;
+        font-size: 4rem
+    }
+}
+
+.home .products {
+    text-align: center;
+    border-bottom: 10px solid #fff
+}
+
+.home .products .tout {
+    background-position: center top;
+    padding-top: 260px;
+    padding-bottom: 30px;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.home .products .overlay {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1
+}
+
+.home .products .tout-title {
+    margin-bottom: 15px;
+    font-family: "Akkurat Light", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 26px;
+    font-size: 2.6rem;
+    line-height: 1.1;
+    letter-spacing: -1px
+}
+
+@media (min-width: 768px) {
+    .home .products .tout-title {
+        font-size: 38px;
+        font-size: 3.8rem
+    }
+}
+
+.home .products .chevron {
+    margin-bottom: 0;
+    font-family: "Akkurat", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 21px;
+    font-size: 2.1rem;
+    letter-spacing: -1px;
+    font-size: 20px;
+    font-size: 2rem
+}
+
+@media (min-width: 768px) {
+    .home .products .chevron {
+        font-size: 30px;
+        font-size: 3rem
+    }
+}
+
+.home .products .tout:hover .chevron > b {
+    right: -0.4em
+}
+
+@media screen and (max-width: 767px) {
+    .home .products .tout:not(:last-of-type) {
+        border-bottom: 10px solid #fff
+    }
+
+    .home .products .text-block {
+        max-width: 260px;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .home .products .tout-title:lang(fr-BE) {
+        font-size: 23px;
+        font-size: 2.3rem
+    }
+
+    .home .products .tout-title:lang(fr-CA) {
+        font-size: 23px;
+        font-size: 2.3rem
+    }
+
+    .home .products .tout-title:lang(fr-FR) {
+        font-size: 23px;
+        font-size: 2.3rem
+    }
+
+    .home .products .tout-title:lang(nl-BE) {
+        font-size: 23px;
+        font-size: 2.3rem
+    }
+
+    .home .products .tout-title:lang(nl-NL) {
+        font-size: 23px;
+        font-size: 2.3rem
+    }
+}
+
+@media (min-width: 768px) {
+    .home .products {
+        box-sizing: content-box;
+        display: table;
+        border-collapse: collapse;
+        width: 100%
+    }
+
+    .home .products:after, .home .products:before {
+        content: "";
+        display: table;
+        clear: both
+    }
+
+    .home .products .tout {
+        display: table-cell;
+        width: 50%;
+        padding-left: 30px;
+        padding-right: 30px
+    }
+
+    .home .products .tout:lang(nl-BE) {
+        padding-left: 45px;
+        padding-right: 45px
+    }
+
+    .home .products .tout:lang(nl-NL) {
+        padding-left: 45px;
+        padding-right: 45px
+    }
+
+    .home .products .tout:lang(fr-BE) {
+        padding-left: 45px;
+        padding-right: 45px
+    }
+
+    .home .products .tout:lang(fr-CA) {
+        padding-left: 45px;
+        padding-right: 45px
+    }
+
+    .home .products .tout:lang(fr-FR) {
+        padding-left: 45px;
+        padding-right: 45px
+    }
+
+    .home .products .tout:not(:last-of-type) {
+        border-right: 10px solid #fff
+    }
+
+    .home .products .tout-title {
+        font-size: 28px;
+        font-size: 2.8rem;
+        margin-bottom: 8px
+    }
+
+    .home .products .tout-title:lang(nl-BE) {
+        font-size: 25px;
+        font-size: 2.5rem
+    }
+
+    .home .products .tout-title:lang(nl-NL) {
+        font-size: 25px;
+        font-size: 2.5rem
+    }
+
+    .home .products .tout-title:lang(fr-BE) {
+        font-size: 25px;
+        font-size: 2.5rem
+    }
+
+    .home .products .tout-title:lang(fr-CA) {
+        font-size: 25px;
+        font-size: 2.5rem
+    }
+
+    .home .products .tout-title:lang(fr-FR) {
+        font-size: 25px;
+        font-size: 2.5rem
+    }
+
+    .home .products .chevron {
+        font-size: 21px;
+        font-size: 2.1rem
+    }
+
+    .home .products .chevron:lang(nl-BE) {
+        font-size: 18px;
+        font-size: 1.8rem
+    }
+
+    .home .products .chevron:lang(nl-NL) {
+        font-size: 18px;
+        font-size: 1.8rem
+    }
+
+    .home .products .chevron:lang(fr-BE) {
+        font-size: 18px;
+        font-size: 1.8rem
+    }
+
+    .home .products .chevron:lang(fr-CA) {
+        font-size: 18px;
+        font-size: 1.8rem
+    }
+
+    .home .products .chevron:lang(fr-FR) {
+        font-size: 18px;
+        font-size: 1.8rem
+    }
+}
+
+@media (min-width: 1300px) {
+    .home .products br {
+        display: none
+    }
+
+    .home .products .tout-title {
+        margin: 0 auto 5px
+    }
+
+    .home .products .chevron {
+        font-family: "Akkurat Light", Helvetica, Arial, "Lucida Grande", sans-serif
+    }
+}
+
+.home .products .tout.thermostat {
+    background-image: url("/images/homepage/products/thermostat/heat/mobile-ecc1608a4a.jpg");
+    background-repeat: no-repeat;
+    background-size: 768px 450px
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .products .tout.thermostat {
+        background-image: url("/images/homepage/products/thermostat/heat/mobile_2x-de54af35e0.jpg")
+    }
+}
+
+.home .products .tout.thermostat:lang(en-CA) {
+    background-image: url("/images/homepage/products/thermostat/heat/celsius/en/mobile-1bcac4349f.jpg");
+    background-repeat: no-repeat
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .products .tout.thermostat:lang(en-CA) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/en/mobile_2x-318c60b422.jpg")
+    }
+}
+
+.home .products .tout.thermostat:lang(en-GB) {
+    background-image: url("/images/homepage/products/thermostat/heat/celsius/en/mobile-1bcac4349f.jpg");
+    background-repeat: no-repeat
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .products .tout.thermostat:lang(en-GB) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/en/mobile_2x-318c60b422.jpg")
+    }
+}
+
+.home .products .tout.thermostat:lang(fr-BE) {
+    background-image: url("/images/homepage/products/thermostat/heat/celsius/fr/mobile-d69606a997.jpg");
+    background-repeat: no-repeat
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .products .tout.thermostat:lang(fr-BE) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/fr/mobile_2x-9a83e88653.jpg")
+    }
+}
+
+.home .products .tout.thermostat:lang(fr-CA) {
+    background-image: url("/images/homepage/products/thermostat/heat/celsius/fr/mobile-d69606a997.jpg");
+    background-repeat: no-repeat
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .products .tout.thermostat:lang(fr-CA) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/fr/mobile_2x-9a83e88653.jpg")
+    }
+}
+
+.home .products .tout.thermostat:lang(fr-FR) {
+    background-image: url("/images/homepage/products/thermostat/heat/celsius/fr/mobile-d69606a997.jpg");
+    background-repeat: no-repeat
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .products .tout.thermostat:lang(fr-FR) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/fr/mobile_2x-9a83e88653.jpg")
+    }
+}
+
+.home .products .tout.thermostat:lang(nl-BE) {
+    background-image: url("/images/homepage/products/thermostat/heat/celsius/nl/mobile-c6b096b8ff.jpg");
+    background-repeat: no-repeat
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .products .tout.thermostat:lang(nl-BE) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/nl/mobile_2x-974ec54076.jpg")
+    }
+}
+
+.home .products .tout.thermostat:lang(nl-NL) {
+    background-image: url("/images/homepage/products/thermostat/heat/celsius/nl/mobile-c6b096b8ff.jpg");
+    background-repeat: no-repeat
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .products .tout.thermostat:lang(nl-NL) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/nl/mobile_2x-974ec54076.jpg")
+    }
+}
+
+.home .products .tout.thermostat .tout-title, .home .products .tout.thermostat .chevron {
+    color: #3d4247
+}
+
+@media (min-width: 1300px) {
+    .home .products .tout.thermostat {
+        padding-top: 313px;
+        background-image: url("/images/homepage/products/thermostat/heat/desktop-40e434aee3.jpg");
+        background-repeat: no-repeat;
+        background-size: 635px 400px
+    }
+}
+
+@media (min-width: 1300px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1300px) and (min-resolution: 144dpi) {
+    .home .products .tout.thermostat {
+        background-image: url("/images/homepage/products/thermostat/heat/desktop_2x-9d737e76fd.jpg")
+    }
+}
+
+@media (min-width: 1300px) {
+    .home .products .tout.thermostat:lang(en-CA) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/en/desktop-979eb5e683.jpg");
+        background-repeat: no-repeat
+    }
+}
+
+@media (min-width: 1300px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1300px) and (min-resolution: 144dpi) {
+    .home .products .tout.thermostat:lang(en-CA) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/en/desktop_2x-3e062fe580.jpg")
+    }
+}
+
+@media (min-width: 1300px) {
+    .home .products .tout.thermostat:lang(en-GB) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/en/desktop-979eb5e683.jpg");
+        background-repeat: no-repeat
+    }
+}
+
+@media (min-width: 1300px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1300px) and (min-resolution: 144dpi) {
+    .home .products .tout.thermostat:lang(en-GB) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/en/desktop_2x-3e062fe580.jpg")
+    }
+}
+
+@media (min-width: 1300px) {
+    .home .products .tout.thermostat:lang(fr-BE) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/fr/desktop-b66ec4f4f5.jpg");
+        background-repeat: no-repeat
+    }
+}
+
+@media (min-width: 1300px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1300px) and (min-resolution: 144dpi) {
+    .home .products .tout.thermostat:lang(fr-BE) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/fr/desktop_2x-d2f97d6800.jpg")
+    }
+}
+
+@media (min-width: 1300px) {
+    .home .products .tout.thermostat:lang(fr-CA) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/fr/desktop-b66ec4f4f5.jpg");
+        background-repeat: no-repeat
+    }
+}
+
+@media (min-width: 1300px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1300px) and (min-resolution: 144dpi) {
+    .home .products .tout.thermostat:lang(fr-CA) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/fr/desktop_2x-d2f97d6800.jpg")
+    }
+}
+
+@media (min-width: 1300px) {
+    .home .products .tout.thermostat:lang(fr-FR) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/fr/desktop-b66ec4f4f5.jpg");
+        background-repeat: no-repeat
+    }
+}
+
+@media (min-width: 1300px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1300px) and (min-resolution: 144dpi) {
+    .home .products .tout.thermostat:lang(fr-FR) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/fr/desktop_2x-d2f97d6800.jpg")
+    }
+}
+
+@media (min-width: 1300px) {
+    .home .products .tout.thermostat:lang(nl-BE) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/nl/desktop-810d889432.jpg");
+        background-repeat: no-repeat
+    }
+}
+
+@media (min-width: 1300px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1300px) and (min-resolution: 144dpi) {
+    .home .products .tout.thermostat:lang(nl-BE) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/nl/desktop_2x-21be4f9587.jpg")
+    }
+}
+
+@media (min-width: 1300px) {
+    .home .products .tout.thermostat:lang(nl-NL) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/nl/desktop-810d889432.jpg");
+        background-repeat: no-repeat
+    }
+}
+
+@media (min-width: 1300px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1300px) and (min-resolution: 144dpi) {
+    .home .products .tout.thermostat:lang(nl-NL) {
+        background-image: url("/images/homepage/products/thermostat/heat/celsius/nl/desktop_2x-21be4f9587.jpg")
+    }
+}
+
+.home .products .tout.protect {
+    background-image: url("../images/alarm.jpg");
+    background-repeat: no-repeat;
+    background-size: 768px 450px;
+    padding-top: 230px
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .products .tout.protect {
+        background-image: url("../images/alarm.jpg")
+    }
+}
+
+.home .products .tout.protect .tout-title, .home .products .tout.protect .chevron {
+    color: #fff
+}
+
+@media (min-width: 768px) {
+    .home .products .tout.protect {
+        padding-top: 260px
+    }
+}
+
+@media (min-width: 1300px) {
+    .home .products .tout.protect {
+        padding-top: 313px;
+        background-image: url("../images/alarm.jpg");
+        background-repeat: no-repeat;
+        background-size: 635px 450px
+    }
+
+    .home .products .tout.protect:lang(fr-CA) {
+        padding-top: 300px
+    }
+}
+
+@media (min-width: 1300px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1300px) and (min-resolution: 144dpi) {
+    .home .products .tout.protect {
+        background-image: url("../images/alarm.jpg")
+    }
+}
+
+.home .products .tout.nestcam {
+    background-image: url("../images/alarm.jpg");
+    background-repeat: no-repeat;
+    background-size: 768px 450px;
+    background-position: 50% 5%
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+    .home .products .tout.nestcam {
+        background-image: url("/images/homepage/products/nestcam/mobile_2x-4e944a4b62.jpg")
+    }
+}
+
+.home .products .tout.nestcam .tout-title, .home .products .tout.nestcam .chevron {
+    color: #3d4247
+}
+
+@media (min-width: 1300px) {
+    .home .products .tout.nestcam {
+        padding-top: 313px;
+        background-image: url("../images/camera.jpg");
+        background-repeat: no-repeat;
+        background-size: 768px 450px;
+        background-position: 50% 0
+    }
+}
+
+@media (min-width: 1300px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1300px) and (min-resolution: 144dpi) {
+    .home .products .tout.nestcam {
+        background-image: url("../images/camera.jpg")
+    }
+}
+
+.home .what-else {
+    background: #ececec;
+    padding: 15px 15px 65px;
+    border-bottom: 10px solid #fff;
+    -webkit-transform: translate3d(0, 0, 0)
+}
+
+.home .what-else .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1
+}
+
+.home .what-else .nl-gallery {
+    background: #fff;
+    height: 600px;
+    max-width: 390px;
+    margin: 0 auto;
+    transition: height 500ms ease
+}
+
+.home .what-else .nl-slides {
+    left: 0;
+    overflow: hidden
+}
+
+.home .what-else .slide {
+    bottom: auto;
+    transition: opacity 300ms ease
+}
+
+.home .what-else .controls {
+    bottom: -50px
+}
+
+.home .what-else .text-block {
+    margin: 30px 0;
+    padding: 0 25px
+}
+
+.home .what-else .nest-blog {
+    font-size: 13px;
+    font-size: 1.3rem
+}
+
+.home .what-else h2 {
+    margin-bottom: 20px;
+    font-family: "Akkurat Light", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 26px;
+    font-size: 2.6rem;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: #00AFD8;
+    font-size: 30px;
+    font-size: 3rem;
+    margin: 15px auto;
+    max-width: 250px
+}
+
+@media (min-width: 768px) {
+    .home .what-else h2 {
+        font-size: 38px;
+        font-size: 3.8rem
+    }
+}
+
+.home .what-else .slide.custom h2 {
+    margin-bottom: 5px
+}
+
+.home .what-else .slide.custom .chevron {
+    font-size: 16px;
+    font-size: 1.6rem
+}
+
+@media screen and (max-width: 767px) {
+    .home .what-else h2, .home .what-else .nest-blog, .home .what-else .slide.custom {
+        text-align: center
+    }
+
+    .home .what-else .desktop-controls {
+        display: none
+    }
+}
+
+@media (min-width: 768px) {
+    .home .what-else.desktop-mode {
+        padding: 40px 0 0
+    }
+
+    .home .what-else.desktop-mode .desktop-gallery {
+        overflow: hidden
+    }
+
+    .home .what-else.desktop-mode .nl-slides {
+        position: relative;
+        left: 0;
+        width: 9999px;
+        height: 390px;
+        overflow: hidden
+    }
+
+    .home .what-else.desktop-mode .nl-slides:after, .home .what-else.desktop-mode .nl-slides:before {
+        content: "";
+        display: table;
+        clear: both
+    }
+
+    .home .what-else.desktop-mode .slide, .home .what-else.desktop-mode .slide.wide img, .home .what-else.desktop-mode .slide.wide .text-block {
+        float: left;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box
+    }
+
+    .home .what-else.desktop-mode .slide {
+        background-color: #fff;
+        position: relative;
+        width: 390px;
+        height: 100%;
+        margin-left: 40px;
+        transition: margin-left 350ms ease-in-out
+    }
+
+    .home .what-else.desktop-mode .slide:hover h2 {
+        color: #00AFD8
+    }
+
+    .home .what-else.desktop-mode .slide.wide {
+        width: 620px
+    }
+
+    .home .what-else.desktop-mode .slide.wide:after, .home .what-else.desktop-mode .slide.wide:before {
+        content: "";
+        display: table;
+        clear: both
+    }
+
+    .home .what-else.desktop-mode .slide.wide .text-block {
+        width: 230px;
+        margin: 0;
+        padding: 45px 30px
+    }
+
+    .home .what-else.desktop-mode img {
+        max-width: 390px
+    }
+
+    .home .what-else.desktop-mode h2 {
+        font-size: 23px;
+        font-size: 2.3rem;
+        color: #3d4247;
+        transition: color 350ms ease-in-out
+    }
+
+    .home .what-else.desktop-mode p:not(.nest-blog) {
+        font-size: 16px;
+        font-size: 1.6rem
+    }
+
+    .home .what-else.desktop-mode .desktop-controls {
+        line-height: 0;
+        padding: 20px 0;
+        text-align: center;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none
+    }
+
+    .home .what-else.desktop-mode .arrow {
+        cursor: pointer;
+        margin: 0 15px
+    }
+
+    .home .what-else.desktop-mode .arrow.left {
+        background-image: url("/images/sprites/global/sprites-6521b33f5e.png");
+        background-position: 0px -1263px;
+        background-repeat: no-repeat;
+        display: block;
+        width: 36px;
+        height: 36px
+    }
+}
+
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi) {
+    .home .what-else.desktop-mode .arrow.left {
+        background-image: url("/images/sprites/global/sprites@2x-1b20f432e1.png");
+        background-size: 130px 4751px
+    }
+}
+
+@media (min-width: 768px) {
+    .home .what-else.desktop-mode .arrow.right {
+        background-image: url("/images/sprites/global/sprites-6521b33f5e.png");
+        background-position: 0px -1227px;
+        background-repeat: no-repeat;
+        display: block;
+        width: 36px;
+        height: 36px
+    }
+}
+
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi) {
+    .home .what-else.desktop-mode .arrow.right {
+        background-image: url("/images/sprites/global/sprites@2x-1b20f432e1.png");
+        background-size: 130px 4751px
+    }
+}
+
+@media (min-width: 768px) {
+    .home .what-else.desktop-mode .arrow.left, .home .what-else.desktop-mode .arrow.right {
+        display: inline-block
+    }
+
+    .home .what-else.desktop-mode .slide.custom .text-block {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 35px 60px 0;
+        text-align: center
+    }
+
+    .home .what-else.desktop-mode .slide.custom .text-block h2 {
+        font-size: 28px;
+        font-size: 2.8rem;
+        margin-bottom: 7px
+    }
+}

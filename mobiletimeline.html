@@ -1,121 +1,285 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="watchdog">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="bower_components/c3/c3.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.js"></script>
-    <script src="bower_components/pubnub/web/pubnub.min.js"></script>
-    <script src="bower_components/d3/d3.min.js"></script>
-    <script src="bower_components/c3/c3.min.js"></script>
-    <script src="bower_components/pubnub-c3.js"></script>
-    <style>
-        .c3-region-1 {
-            fill: #dd3333;
-            fill-opacity: 0.8
-        }
-    </style>
+<html class="js no-filters fahrenheit spring region-CA dma-807 country-US no-touchevents video" lang="en-US"
+      itemscope="itemscope" itemtype="http://schema.org/WebPage"><!--<![endif]-->
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#"> <!--[if !IE]><!-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+    <!-- Loading Bootstrap -->
+    <link href="dist/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/datepicker3.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css" media="screen"
+          rel="stylesheet">
+    <link href="css/device2.css" media="screen"
+          rel="stylesheet">
 
-    <!--Icons-->
-    <script src="js/lumino.glyphs.js"></script>
-
-    <!--[if lt IE 9]-->
-    <script src="js/respond.min.js"></script>
-    <script src="js/html5shiv.min.js"></script>
-    <!--Angular js-->
-    <script src="bower_components/angular/angular.min.js"></script>
 </head>
-<body ng-controller="HealthController">
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><span>Appliance</span>Watchdog</a>
-            <ul class="user-menu">
-                <li class="dropdown pull-right">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
-                        <li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li>
-                        <li><a href="#"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
+<body id="meet-nest-thermostat" class="thermostat meet">
+<div id="main">
+    <header id="main-header" class="header-bar content" data-swiftype-index="false">
+        <div class="container"><a id="home-link" href="index.html" class="logo" title="Appliance Watchdog" itemprop="url">
+            <img src="images/logo.jpg"></a>
+            <nav id="main-nav" data-swiftype-index="false" title="Main&nbsp;navigation">
+                <ul class="nav-list container" role="menubar">
+
+                    <li id="store-alt" class="nav-store central-nav-item" role="menuitem" data-sws-role="nudge-element">
+                        <a id="store-menu" href="https://store.nest.com" class="menu-item" title="Store"> Store </a>
+                    </li>
+                    <li class="nav-products central-nav-item" role="menuitem"><a href="AddDevice.html" id="product-menu"
+                                                                                 class="menu-item" title="Products">
+                        Add Product <span class="expand-icon">Expand Menu</span> </a>
+
+                    </li>
+
+
+                    </li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" title="Menu"><span>Menu</span></button>
         </div>
-
-    </div><!-- /.container-fluid -->
-</nav>
-
-
-
-<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-    <div class="row">
-        <ol class="breadcrumb">
-            <li><a href="index.html"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use><svg></a></li>
-            | <svg class="glyph stroked desktop-computer-and-mobile"><use xlink:href="#stroked-desktop-computer-and-mobile"></use></svg><li class="active"><a href="device.html">&nbsp;Devices</a></li>
-            | <svg class="glyph stroked heart"><use xlink:href="#stroked-heart"/></svg><li class="active"><a href="CriticalParams.html">&nbsp;Critical Params</a></li>
-        </ol>
-    </div><!--/.row-->
-
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Health Dashboard</h1>
-        </div>
-    </div><!--/.row-->
-
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Health Overview</div>
-                <div class="panel-body">
-                    <div class="canvas-wrapper">
-                        <div id="chart"></div>
-                    </div>
+    </header>
+    <footer id="footer" class="content wrapper " style="background-color: #F2F1EF">
+        <div class="container" >
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Page Heading
+                        <small>Secondary Text</small>
+                    </h1>
                 </div>
             </div>
+            <!-- /.row -->
+
+            <!-- Projects Row -->
+            <div class="row">
+                <div class="col-md-12 portfolio-item">
+                    <div id="chart"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                </div>
+                <div class="col-md-12 portfolio-item">
+                    <div id="chart2"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            <!-- Projects Row -->
+            <div class="row">
+                <div class="col-md-12 portfolio-item">
+                    <div id="chart3"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                </div>
+                <div class="col-md-12 portfolio-item">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                </div>
+            </div>
+
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <button type="submit" class="btn btn-primary" ng-click="prediction()" >Prediction</button>
+    </footer>
+    <footer id="footer" class="content wrapper ">
+        <div class="container">
+            <div class="nav-block">
+                <div class="left">
+                    <ul role="menu" class="sub-nav">
+                        <li role="menuitem">
+                            <div class="sub-head"><a id="store-menu"
+                                                     data-floodlight-cat="nestc424" class="sub-menu-title"
+                                                     data-track-label="Store" title="Store"> Store </a></div>
+                            <ul role="menu">
+                                <li role="menuitem"><a
+                                        data-track-label="Store - Thermostat"
+                                        title="Nest&nbsp;Thermostat"> Watchdog&nbsp; TV  </a></li>
+                                <li role="menuitem"><a
+                                        data-track-label="Store - Protect" title="Nest&nbsp;Protect">
+                                    Wwatchdog&nbsp;Mobile </a></li>
+                                <li role="menuitem"><a
+                                        data-track-label="Store - Camera" title="Nest&nbsp;Cam"> Watchdog&nbsp;Cam </a>
+                                </li>
+                                <li role="menuitem"><a id="store-menu"
+                                                       class="sub-menu-title" data-track-label="Store - Where To Buy"
+                                                       title="Where to&nbsp;buy"> Where to&nbsp;buy </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul role="menu" class="sub-nav">
+                        <li role="menuitem">
+                            <div class="sub-head">Company<span></span></div>
+                            <ul role="menu">
+                                <li role="menuitem"><a href="//nest.com/about/" class="" data-track-label="About us"
+                                                       title="About&nbsp;us"> About&nbsp;us </a></li>
+                                <li role="menuitem"><a href="//nest.com/blog/" class="" data-track-label="Blog"
+                                                       title="Blog"> Blog </a></li>
+                                <li role="menuitem"><a href="//nest.com/responsibility/" class=""
+                                                       data-track-label="Responsibility" title="Responsibility">
+                                    Responsibility </a></li>
+                                <li role="menuitem"><a href="https://nest.com/careers/" class=""
+                                                       data-track-label="Careers" title="Careers"> Careers </a></li>
+                                <li role="menuitem"><a class="sub-menu-title" href="//nest.com/press/"
+                                                       data-track-label="Press" title="Press"> Press </a></li>
+                                <li role="menuitem"><a class="sub-menu-title" href="https://community.nest.com/welcome"
+                                                       data-track-label="Community" title="Community"> Community </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <form action="" method="post"
+                          id="footer-email-signup" class="generic-signup"><input type="email" name="email"
+                                                                                 placeholder="Enter email for Watchdog&nbsp;news"
+                                                                                 title="Enter email for Nest&nbsp;news"/>
+                        <button class="signup-submit chevron" type="submit" title="Submit"><b>&gt;</b></button>
+                        <div class="secure-statement">Private, secure,&nbsp;spam-free.</div>
+                        <div class="message signup-invalid-email"><p><b>!</b>Please enter a valid email&nbsp;address.
+                        </p></div>
+                        <div class="message signup-server-error"><p><b>!</b>Oops! There was an error. Try&nbsp;again?
+                        </p></div>
+                        <div class="message signup-success"><p><b>&#x2713;</b>Success! Nest will keep you&nbsp;updated
+                        </p></div>
+                    </form>
+                    <nav class="nl-locale-chooser">
+                        <ul class="locale" aria-haspopup="true" role="menu">
+                            <li role="menuitem"><a href="/choose-your-country/" class="nl-locale-chooser-link chevron"
+                                                   lang="en-US" title="Change your&nbsp;country"> <span class="flag"
+                                                                                                        role="img"
+                                                                                                        aria-label="Change"></span>
+                                <span class="locale-name"> Change&nbsp;<b>&gt;</b> </span> </a></li>
+                        </ul>
+                    </nav>
+                    <div class="social"><a href="" title="Facebook">
+                        <div class="sprite facebook small" role="img" aria-label="Facebook"></div>
+                    </a> <a href="/" title="Twitter">
+                        <div class="sprite twitter small" role="img" aria-label="Twitter"></div>
+                    </a> <a href="" title="Pinterest">
+                        <div class="sprite pinterest small" role="img" aria-label="Pinterest"></div>
+                    </a> <a href="" rel="publisher" title="g+">
+                        <div class="sprite google-plus small" role="img" aria-label="g+"></div>
+                    </a></div>
+                </div>
+            </div>
+            <ul class="legal" role="menu">
+                <li class="copyright"> &copy; 2016 Appliance Watchdog Labs</li>
+                <li role="menuitem" class="legal"><a href="" title="Legal ">
+                    Legal </a></li>
+                <li role="menuitem" class="privacy-policy"><a href="" title="Privacy "> Privacy </a>
+                </li>
+                <li role="menuitem" class="security"><a href="" title="Security "> Security </a>
+                </li>
+                <li role="menuitem" class="notice"><a href=""
+                                                      title="Nest Protect Safety&nbsp;Notice "> AW Protect Safety&nbsp;Notice </a>
+                </li>
+                <li role="menuitem"><a href="" data-track-label="Contact us"
+                                       title="Contact&nbsp;us "> Contact&nbsp;us </a></li>
+            </ul>
         </div>
-    </div>
-</div>
-<script>
-    var channel_name=sessionStorage.getItem("channel_id")
-    console.log("channel name is: "+channel_name)
-    eon.chart({
-        channel: channel_name,
-        generate: {
+    </footer>
+    <script>
+        var chart = c3.generate({
             bindto: '#chart',
             data: {
-                type: 'gauge',
+                x : 'date',
+                xFormat : '%Y%m%d',
+                columns: [
+//            ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
+                    ['date', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
+                    ['sample', 30, 200, 100, 400, 150, 250],
+                    ['sample2', 130, 300, 200, 450, 250, 350]
+                ]
             },
-            gauge: {
-                min: 0,
-                max: 100
+            grid: {
+                x: {
+                    show: true,
+                },
+                y: {
+                    show: true,
+                }
             },
-
-            color: {
-                pattern: ['#FF0000', '#F6C600', '#60B044'],
-                threshold: {
-                    values: [30, 60, 90]
+            axis : {
+                x : {
+                    type : 'timeseries',
+                    tick : {
+//              format : "%m/%d" // https://github.com/mbostock/d3/wiki/Time-Formatting#wiki-format
+                        format : "%e %b %y" // https://github.com/mbostock/d3/wiki/Time-Formatting#wiki-format
+                    }
                 }
             }
-        }
-    });
-</script>
-<script src="js/app.js"></script>
-<script src="js/controllers.js"></script>
-<script src="js/services.js"></script>
+        });
+
+    </script>
+    <script type="text/javascript">
+
+        var chart = c3.generate({
+            bindto: '#chart2',
+            data: {
+                x: 'x',
+                //        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
+                columns: [
+                    ['x', '2016-04-01', '2016-04-02', '2016-04-03', '2016-04-04', '2016-04-05', '2016-04-06'
+                        ,'2016-04-07','2016-04-08'
+                        ,'2016-04-09','2016-04-10','2016-04-11','2016-04-12','2016-04-13','2016-04-14'
+                        ,'2016-04-15','2016-04-16',
+                        '2016-04-17','2016-04-18','2016-04-19','2016-04-20','2016-04-21','2016-04-22'
+                        ,'2016-04-23','2016-04-24',
+                        '2016-04-25','2016-04-26','2016-04-27','2016-04-28','2016-04-29','2016-04-30'
+                    ],
+                    //            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
+                    ['refrigerator1', 18.66, 19.55, 18.36, 17.98, 20.23, 16.10,16.79,20.98,21.98,21.90,18.79
+                        ,19.87,18.98,17.78,18.98,18.54,19.08,17.94,21.01,20.20,19.98,30.07,20.40,19.76,20.99,19.9,20.54,
+                        19.67,19.88,20.26],
+                    ['All refrigerators', 18.66, 19.66, 18.36, 18.98, 19.23, 19.10,18.79,19.98,18.79,19.66,18.79,
+                        19.23,19.79,19.89,18.98,19.58,19.67,18.99,19.45,19.87,19.67,18.98,19.34,19.32,18.97,19.87,
+                        19.64,19.32,19.79,19.54]
+                ]
+            },
+            grid: {
+                x: {
+                    show: true,
+                },
+                y: {
+                    show: true,
+                }
+            },
+            axis: {
+                x: {
+                    type: 'timeseries',
+                    tick: {
+                        format: '%Y-%m-%d'
+                    }
+                }
+            }
+        });
+    </script>
+    <script type="text/javascript">
+
+        var chart = c3.generate({
+            bindto : '#chart3',
+            data: {
+                x: 'x',
+                //        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
+                columns: [
+                    ['x', '2016-04-01', '2016-04-02', '2016-04-03', '2016-04-04', '2016-04-05', '2016-04-06','2016-04-07'],
+                    //            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
+                    ['refrigerator1', 18.66, 19.55, 18.36, 17.98, 20.23, 16.10,16.79],
+                    ['All refrigerators', 18.66, 19.66, 18.36, 18.98, 19.23, 19.10,18.79]
+                ]
+            },
+            grid: {
+                x: {
+                    show: true,
+                },
+                y: {
+                    show: true,
+                }
+            },
+            axis: {
+                x: {
+                    type: 'timeseries',
+                    tick: {
+                        format: '%Y-%m-%d'
+                    }
+                }
+            }
+        });
+
+
+
+    </script>
 </body>
 </html>
