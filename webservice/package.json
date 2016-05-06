@@ -1,0 +1,14 @@
+{
+  "name": "watchdog",
+  "description": "Watchdog web service",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cassandra-driver": "^3.0.2",
+    "cors": "2.x",
+    "express": "*",
+    "jsonfile": "^2.3.0",
+    "mongoose": "^4.4.12"
+  }
+}

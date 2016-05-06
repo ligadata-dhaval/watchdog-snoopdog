@@ -1,0 +1,16 @@
+{
+  "name": "watchdog",
+  "version": "0.0.1",
+  "dependencies": {
+    "sass-bootstrap": "~3.0.0",
+    "modernizr": "~2.6.2",
+    "angular": "~1.4.5",
+    "c3": "~0.3.0",
+    "d3": "~3.5.0"
+  },
+  "private": true,
+  "resolutions": {
+    "d3": "~3.5.0",
+    "webcomponentsjs": "^0.6.0"
+  }
+}
