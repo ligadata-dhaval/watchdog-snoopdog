@@ -1,14 +1,52 @@
-<html ng-app="watchdog"><!--<![endif]-->
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#"> <!--[if !IE]><!-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css" media="screen"
-          rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en" ng-app="watchdog">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>1 Col Portfolio - Start Bootstrap Template</title>
+
+    <!--Angular js-->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/c3.css">
+    <!-- Custom CSS -->
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
     <link href="css/device2.css" media="screen"
           rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="bower_components/pubnub/web/pubnub.min.js"></script>
+    <script src="bower_components/pubnub-c3.js"></script>
+    <style>
+        .c3-region-1 {
+            fill: #dd3333;
+            fill-opacity: 0.8
+        }
+    </style>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
 
 </head>
-<body id="meet-nest-thermostat" class="thermostat meet" ng-controller="DeviceDashboard">
+
+<body id="meet-nest-thermostat" class="thermostat meet" ng-controller="DeviceController">
 <div id="main">
     <header id="main-header" class="header-bar content" data-swiftype-index="false">
         <div class="container"><a id="home-link" href="index.html" class="logo" title="Appliance Watchdog" itemprop="url">
@@ -30,14 +68,13 @@
                         Logout </a>
 
                     </li>
-
                     </li>
                 </ul>
             </nav>
             <button class="menu-toggle" title="Menu"><span>Menu</span></button>
         </div>
     </header>
-    <!--<footer id="footer" class="content wrapper " style="background-color: #F2F1EF">-->
+    <!-- Page Content -->
     <div class="container">
 
         <!-- Page Heading -->
@@ -51,50 +88,50 @@
         <!-- /.row -->
 
         <!-- Project One -->
-        <div class="row">
+        <div class="row"  ng-repeat="appliance in appliances | filter: 'mobile'">
             <div class="col-md-7">
-                <div id="chart3"></div>
-            </div>
+                <div id="chartmobile"></div>
+             </div>
             <div class="col-md-5">
-                <h3>Television</h3>
-                <p>This is the current(real-time) health of your refrigerator. Click on the button to get the health analytics</p>
-                <a class="btn btn-primary" href="mobiletimeline.html">View Health Analysis <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <h3>Mobile</h3>
+                <p>This is the current(real-time) health of your mobile. Click on the button to get the health analytics</p>
+                <a class="btn btn-primary" href="#">View Health Analysis <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
+            <hr>
         </div>
         <!-- /.row -->
 
-        <hr>
+        <!-- Project One -->
+        <div class="row"  ng-repeat="appliance in appliances | filter: 'tv'">
 
-        <!-- Project Two -->
-        <div class="row">
             <div class="col-md-7">
-                <div id="chart2"></div>
+                <div id="charttv"></div>
+            </div>
+            <div class="col-md-5">
+                <h3>TV</h3>
+                <p>This is the current(real-time) health of your tv. Click on the button to get the health analytics</p>
+                <a class="btn btn-primary" href="#">View Health Analysis <span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+            <hr>
+        </div>
+        <!-- /.row -->
+
+        <!-- Project One -->
+        <div class="row"  ng-repeat="appliance in appliances  | filter: 'refrigerator'">
+            <div class="col-md-7">
+                <div class="chart" id="chartrefrigerator"></div>
             </div>
             <div class="col-md-5">
                 <h3>Refrigerator</h3>
-                <p>This is the current(real-time) health of your televison. Click on the button to get the health analytics</p>
-                <a class="btn btn-primary" href="mobiletimeline.html">View Health Analysis <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <p>This is the current(real-time) health of your refrigerator. Click on the button to get the health analytics</p>
+                <a class="btn btn-primary" href="#">View Health Analysis <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
+            <hr>
         </div>
         <!-- /.row -->
 
-        <hr>
-
-        <div class="row">
-            <div class="col-md-7">
-                <div id="chart11"></div>
-            </div>
-            <div class="col-md-5">
-                <h3>Iphone</h3>
-                <p>This is the current(real-time) health of your iphone. Click on the button to get the health analytics</p>
-                <a class="btn btn-primary" href="mobiletimeline.html">View Health Analysis <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
-        </div>
-        <hr>
-
 
     </div>
-    </footer>
     <footer id="footer" class="content wrapper ">
         <div class="container">
             <div class="nav-block">
@@ -191,160 +228,76 @@
                                        title="Contact&nbsp;us "> Contact&nbsp;us </a></li>
             </ul>
         </div>
-        <!--</footer>-->
-        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-        <script src="js/c3.js"></script>
-        <script>
-            var chart = c3.generate({
-                bindto: '#chart',
-                data: {
-                    x : 'date',
-                    xFormat : '%Y%m%d',
-                    columns: [
-//            ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
-                        ['date', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
-                        ['sample', 30, 200, 100, 400, 150, 250],
-                        ['sample2', 130, 300, 200, 450, 250, 350]
-                    ]
-                },
-                grid: {
-                    x: {
-                        show: true,
-                    },
-                    y: {
-                        show: true,
-                    }
-                },
-                axis : {
-                    x : {
-                        type : 'timeseries',
-                        tick : {
-//              format : "%m/%d" // https://github.com/mbostock/d3/wiki/Time-Formatting#wiki-format
-                            format : "%e %b %y" // https://github.com/mbostock/d3/wiki/Time-Formatting#wiki-format
-                        }
-                    }
-                }
-            });
+    </footer>
+    <!-- /.container -->
+</div>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="js/c3.js"></script>
 
-        </script>
-        <script type="text/javascript">
+<script>
 
-            var chart = c3.generate({
-                bindto: '#chart2',
-                data: {
-                    x: 'x',
-                    //        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
-                    columns: [
-                        ['x', '2016-04-01', '2016-04-02', '2016-04-03', '2016-04-04', '2016-04-05', '2016-04-06'
-                            ,'2016-04-07','2016-04-08'
-                            ,'2016-04-09','2016-04-10','2016-04-11','2016-04-12','2016-04-13','2016-04-14'
-                            ,'2016-04-15','2016-04-16',
-                            '2016-04-17','2016-04-18','2016-04-19','2016-04-20','2016-04-21','2016-04-22'
-                            ,'2016-04-23','2016-04-24',
-                            '2016-04-25','2016-04-26','2016-04-27','2016-04-28','2016-04-29','2016-04-30'
-                        ],
-                        //            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
-                        ['Refrigerator Temperature(in Celcius)', 18.66, 19.55, 18.36, 17.98, 20.23, 16.10,16.79,20.98,21.98,21.90,18.79
-                            ,19.87,18.98,17.78,18.98,18.54,19.08,17.94,21.01,20.20,19.98,30.07,20.40,19.76,20.99,19.9,20.54,
-                            19.67,19.88,20.26]
-                    ]
-                },
-                grid: {
-                    x: {
-                        show: true,
-                    },
-                    y: {
-                        show: true,
-                    }
-                },
-                axis: {
-                    x: {
-                        type: 'timeseries',
-                        tick: {
-                            format: '%Y-%m-%d'
-                        }
-                    }
+    eon.chart({
+        channel: "refrigerator",
+        generate: {
+            bindto: '#chartrefrigerator',
+            data: {
+                type: 'gauge',
+            },
+            gauge: {
+                min: 0,
+                max: 100
+            },
+            color: {
+                pattern: ['#FF0000', '#F6C600', '#60B044'],
+                threshold: {
+                    values: [30, 60, 90]
                 }
-            });
-        </script>
-        <script type="text/javascript">
+            }
+        }
+    });
 
-            var chart = c3.generate({
-                bindto: '#chart3',
-                data: {
-                    x: 'x',
-                    //        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
-                    columns: [
-                        ['x', '2016-04-01', '2016-04-02', '2016-04-03', '2016-04-04', '2016-04-05', '2016-04-06'
-                            ,'2016-04-07','2016-04-08'
-                            ,'2016-04-09','2016-04-10','2016-04-11','2016-04-12','2016-04-13','2016-04-14'
-                            ,'2016-04-15','2016-04-16',
-                            '2016-04-17','2016-04-18','2016-04-19','2016-04-20','2016-04-21','2016-04-22'
-                            ,'2016-04-23','2016-04-24',
-                            '2016-04-25','2016-04-26','2016-04-27','2016-04-28','2016-04-29','2016-04-30'
-                        ],
-                        //            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
-                        ['Television', 18.66, 19.55, 18.36, 17.98, 20.23, 16.10,16.79,20.98,21.98,21.90,18.79
-                            ,19.87,18.98,17.78,18.98,18.54,19.08,17.94,21.01,20.20,19.98,30.07,20.40,19.76,20.99,19.9,20.54,
-                            19.67,19.88,20.26]
-                    ]
-                },
-                grid: {
-                    x: {
-                        show: true,
-                    },
-                    y: {
-                        show: true,
-                    }
-                },
-                axis: {
-                    x: {
-                        type: 'timeseries',
-                        tick: {
-                            format: '%Y-%m-%d'
-                        }
-                    }
+    eon.chart({
+        channel: "mobile",
+        generate: {
+            bindto: '#chartmobile',
+            data: {
+                type: 'gauge',
+            },
+            gauge: {
+                min: 0,
+                max: 100
+            },
+            color: {
+                pattern: ['#FF0000', '#F6C600', '#60B044'],
+                threshold: {
+                    values: [30, 60, 90]
                 }
-            });
+            }
+        }
+    });
 
-            var chart1 = c3.generate({
-                bindto: '#chart11',
-                data: {
-                    columns: [
-                        ['Battery Temperature', 75.0]
-                    ],
-                    type: 'gauge',
-                },
-                gauge: {
-                    min: 50,
-                    max: 100
+    eon.chart({
+        channel: "tv",
+        generate: {
+            bindto: '#charttv',
+            data: {
+                type: 'bar',
+            },
+            gauge: {
+                min: 0,
+                max: 100
+            },
+            color: {
+                pattern: ['#FF0000', '#F6C600', '#60B044'],
+                threshold: {
+                    values: [30, 60, 90]
                 }
-            });
-            var chart111 = c3.generate({
-                bindto: '#chart3',
-                data: {
-                    columns: [
-                        ['x', '2016-04-01', '2016-04-02', '2016-04-03', '2016-04-04', '2016-04-05', '2016-04-06'
-                            ,'2016-04-07','2016-04-08'
-                            ,'2016-04-09','2016-04-10','2016-04-11','2016-04-12','2016-04-13','2016-04-14'
-                            ,'2016-04-15','2016-04-16',
-                            '2016-04-17','2016-04-18','2016-04-19','2016-04-20','2016-04-21','2016-04-22'
-                            ,'2016-04-23','2016-04-24',
-                            '2016-04-25','2016-04-26','2016-04-27','2016-04-28','2016-04-29','2016-04-30'
-                        ],
-                        ['data2', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0 , 0 , 0 , 0, 1, 1, 1,0,0,1 ]
-                    ],
-                    type: 'bar'
-                },
-                bar: {
-                    width: {
-                        ratio: 0.5 // this makes bar width 50% of length between ticks
-                    }
-                    // or
-                    //width: 100 // this makes bar width 100px
-                }
-            });
-        </script>
-        <script src="js/fb.js"></script>
+            }
+        }
+    });
+
+</script>
+
 </body>
+
 </html>

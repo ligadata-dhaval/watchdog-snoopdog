@@ -1670,7 +1670,7 @@ small {
 
 a, a:visited {
     text-decoration: none;
-    color: #00AFD8;
+    color: #f5f5f5;
     transition: color 0.2s ease-in-out, opacity 0.2s ease;
     -webkit-tap-highlight-color: transparent
 }
