@@ -31,21 +31,25 @@
             <img src="images/logo.jpg" style="margin-top: 25px" width="200px"></a>
             <nav id="main-nav" data-swiftype-index="false" title="Main&nbsp;navigation">
                 <ul class="nav-list container" role="menubar">
-
-                    <li id="store-alt" class="nav-store central-nav-item" role="menuitem" data-sws-role="nudge-element">
-                        <a id="store-menu" href="https://store.nest.com" class="menu-item" title="Store"> Store </a>
+                    <li class="nav-products central-nav-item" role="menuitem"><a class="menu-item" data-toggle="modal" data-target="#myModal">
+                        Add Product</a>
                     </li>
-                    <li class="nav-products central-nav-item" role="menuitem"><a href="device.html" id="product-menu"
-                                                                                 class="menu-item" title="Products">
-                        Devices <span class="expand-icon">Expand Menu</span> </a>
 
+                    <li class="nav-products central-nav-item" role="menuitem"><a
+                            id="product-menu"
+                            class="menu-item" title="Products" data-toggle="modal" data-target="#deleteModal">
+                        Delete Product</a>
+
+                    </li>
+                    <li class="nav-products central-nav-item" role="menuitem"><a
+                            id="product-menu" href="dashboard.html"
+                            class="menu-item">
+                        Dashboard </a>
                     </li>
                     <li class="nav-products central-nav-item" role="menuitem"><a
                             id="product-menu"
                             class="menu-item" onclick="logout()">
                         Logout </a>
-
-                    </li>
                     </li>
                 </ul>
             </nav>
@@ -279,5 +283,6 @@
         }
     });
 </script>
+<script src="js/fb.js"></script>
 </body>
 </html>
