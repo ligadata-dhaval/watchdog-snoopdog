@@ -131,31 +131,6 @@ abbr {
     clear: both
 }
 
-@font-face {
-    font-family: "Fuller Sans";
-    src: url("/fonts/fuller_sans_dt/regular/2DC1D4_0_0.woff") format("woff"), url("/fonts/fuller_sans_dt/regular/2DC1D4_0_0.eot") format("embedded-opentype")
-}
-
-@font-face {
-    font-family: "Fuller Sans Bold";
-    src: url("/fonts/fuller_sans_dt/bold/2DC1D5_0_0.woff") format("woff"), url("/fonts/fuller_sans_dt/bold/2DC1D5_0_0.eot") format("embedded-opentype")
-}
-
-@font-face {
-    font-family: "Fuller Sans Italic";
-    src: url("/fonts/fuller_sans_dt/italic/2DC1D5_1_0.woff") format("woff"), url("/fonts/fuller_sans_dt/italic/2DC1D5_1_0.eot") format("embedded-opentype")
-}
-
-@font-face {
-    font-family: "Fuller Sans Light";
-    src: url("/fonts/fuller_sans_dt/light/2DC1D3_0_0.woff") format("woff"), url("/fonts/fuller_sans_dt/light/2DC1D3_0_0.eot") format("embedded-opentype")
-}
-
-@font-face {
-    font-family: "Fuller Sans ExtraLight";
-    src: url("/fonts/fuller_sans_dt/extra_light/2DC1D0_0_0.woff") format("woff"), url("/fonts/fuller_sans_dt/extra_light/2DC1D0_0_0.eot") format("embedded-opentype")
-}
-
 /*! Copyright 2013-2015 Nest Labs, All rights reserved *//*! Copyright 2013 Nest Labs, All rights reserved *//*! Copyright 2016 Nest Labs, All rights reserved *//*! Copyright 2013 Nest Labs, All rights reserved */
 body {
     text-rendering: optimizelegibility;
@@ -2512,7 +2487,6 @@ select[multiple] {
 }
 
 #global-nav-search-form .clear-icon {
-    background-image: url("/images/sprites/global/sprites-3ab0349b86.png");
     background-position: 0px -43px;
     background-repeat: no-repeat;
     display: block;
@@ -5509,7 +5483,7 @@ html.no-touchevents #footer .footer-main-nav ul[role="menu"] {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .nl-locale-chooser .locale > li[role="menuitem"] a span.flag {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -5526,7 +5500,7 @@ html.no-touchevents #footer .footer-main-nav ul[role="menu"] {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .nl-locale-chooser .locale > li[role="menuitem"] a[lang="en-CA"] span.flag, .nl-locale-chooser .locale > li[role="menuitem"] a[lang="fr-CA"] span.flag {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -5543,7 +5517,7 @@ html.no-touchevents #footer .footer-main-nav ul[role="menu"] {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .nl-locale-chooser .locale > li[role="menuitem"] a[lang="en-GB"] span.flag {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -5560,7 +5534,7 @@ html.no-touchevents #footer .footer-main-nav ul[role="menu"] {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .nl-locale-chooser .locale > li[role="menuitem"] a[lang="fr-FR"] span.flag {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -5577,7 +5551,7 @@ html.no-touchevents #footer .footer-main-nav ul[role="menu"] {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .nl-locale-chooser .locale > li[role="menuitem"] a[lang="nl-NL"] span.flag {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -5594,7 +5568,7 @@ html.no-touchevents #footer .footer-main-nav ul[role="menu"] {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .nl-locale-chooser .locale > li[role="menuitem"] a[lang="nl-BE"] span.flag, .nl-locale-chooser .locale > li[role="menuitem"] a[lang="fr-BE"] span.flag {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -5611,7 +5585,7 @@ html.no-touchevents #footer .footer-main-nav ul[role="menu"] {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .nl-locale-chooser .locale > li[role="menuitem"] a[lang="en-IE"] span.flag {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -11147,72 +11121,15 @@ body.saving-energy .product-footer hr, body.meet .product-footer hr {
     }
 }
 
-@media (min-width: 960px) {
-    #page-not-found section.body .column {
-        width: 24%;
-        border-right: 1px solid #e2e9ea;
-        margin-left: 1.333333333%
-    }
 
-    #page-not-found section.body .column:lang(fr-FR) {
-        position: relative;
-        min-height: 310px;
-        padding-right: 15px;
-        padding-left: 15px
-    }
 
-    #page-not-found section.body .column:lang(fr-BE) {
-        position: relative;
-        min-height: 310px;
-        padding-right: 15px;
-        padding-left: 15px
-    }
-
-    #page-not-found section.body .column:lang(fr-CA) {
-        position: relative;
-        min-height: 310px;
-        padding-right: 15px;
-        padding-left: 15px
-    }
-
-    #page-not-found section.body .column:lang(nl-NL) {
-        position: relative;
-        min-height: 310px;
-        padding-right: 15px;
-        padding-left: 15px
-    }
-
-    #page-not-found section.body .column:lang(nl-BE) {
-        position: relative;
-        min-height: 310px;
-        padding-right: 15px;
-        padding-left: 15px
-    }
-
-    #page-not-found section.body .column:nth-child(odd) {
-        margin-left: 1.333333333%
-    }
-
-    #page-not-found section.body .column:nth-child(3) {
-        clear: none
-    }
-
-    #page-not-found section.body .column:first-child {
-        margin-left: 0
-    }
-
-    #page-not-found section.body .column:last-child {
-        border: none
-    }
-
-    #page-not-found section.body .column .links li {
-        padding-left: 15px;
-        text-indent: -15px
-    }
-
-    #page-not-found section.body .column .links a {
-        white-space: normal
-    }
+/* latin */
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Quicksand Regular'), local('Quicksand-Regular'), url(https://fonts.gstatic.com/s/quicksand/v5/sKd0EMYPAh5PYCRKSryvW5Bw1xU1rKptJj_0jans920.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
 /**

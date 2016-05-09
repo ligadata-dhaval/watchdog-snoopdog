@@ -1,2 +1,0 @@
-# Appliance watchdog
-# watchdog-snoopdog

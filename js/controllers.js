@@ -1,7 +1,8 @@
 'use strict';
-angular.module('watchdog')
+angular.module('watchdog',[])
     .
     controller('DeviceController',['$scope','appFactory' , function($scope,appFactory) {
+
         $scope.appliances= [];
 
         $scope.storeAppId=function(channel_id){
@@ -22,9 +23,17 @@ angular.module('watchdog')
             function(response) {
                 console.log("Retrieving appliances");
                 $scope.appliances = response.data;
+                //new data
+
+                for(var i =0;i<response.data.length;i++){
+
+                    if(response.data[i].device_type=="mobile"){
+                        console.log(""+response.data[i].device_type);
+
+                    }
+                }
             }
         );
-
 
         $scope.add=function(appliance){
            var app=angular.copy(appliance);
@@ -90,7 +99,8 @@ angular.module('watchdog')
     .
     controller('DashboardController',['$scope','appFactory' , function($scope,appFactory) {
         $scope.appliances= appFactory.getAppliances();
-        console.log($scope.appliance)
+        console.log("Hi bro"+$scope.appliance)
+
     }])
 
 ;

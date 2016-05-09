@@ -3,41 +3,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Appliance Watchdog</title>
-
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/datepicker3.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    <!--Icons-->
-    <script src="js/lumino.glyphs.js"></script>
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <![endif]-->
-
-    <!--Angular js-->
-    <script src="bower_components/angular/angular.min.js"></script>
-
-    <!-- new css-->
-    <link href="css/device2.css" media="screen"
-          rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+    <link href="css/device2.css" media="screen" rel="stylesheet">
 </head>
 <body id="meet-nest-thermostat" class="thermostat meet" ng-controller="DeviceController as dc">
 <div id="main">
-    <header id="main-header" class="header-bar content" data-swiftype-index="false">
-        <div class="container"><a id="home-link" href="index.html" class="logo" title="Appliance Watchdog"
-                                  itemprop="url">
+    <header id="main-header" class="header-bar content">
+        <div class="container"><a id="home-link" href="index.html" class="logo" title="Appliance Watchdog">
             <img src="images/logo.jpg" style="margin-top: 25px" width="200px"></a>
             <nav id="main-nav" data-swiftype-index="false" title="Main&nbsp;navigation">
                 <ul class="nav-list container" role="menubar">
-
-
-                    <li class="nav-products central-nav-item" role="menuitem"><a
-                                                                                 id="product-menu"
-                                                                                 class="menu-item" title="Products" data-toggle="modal" data-target="#myModal">
+                    <li class="nav-products central-nav-item" role="menuitem"><a class="menu-item" data-toggle="modal" data-target="#myModal">
                         Add Product</a>
-
                     </li>
 
                     <li class="nav-products central-nav-item" role="menuitem"><a
@@ -46,46 +24,41 @@
                         Delete Product</a>
 
                     </li>
-
+                    <li class="nav-products central-nav-item" role="menuitem"><a
+                            id="product-menu" href="dashboard.html"
+                            class="menu-item">
+                        Dashboard </a>
+                    </li>
                     <li class="nav-products central-nav-item" role="menuitem"><a
                             id="product-menu"
                             class="menu-item" onclick="logout()">
-                       Logout </a>
-
+                        Logout </a>
                     </li>
-
-
                 </ul>
             </nav>
-            <button class="menu-toggle" title="Menu"><span>Menu</span></button>
         </div>
     </header>
     <footer id="footer" class="content wrapper " style="background-color: #F2F1EF">
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <!-- <div class="panel-heading">
-                        <strong>Stroked Icon Set</strong> <em>(full set available via <a href="https://glyphs.co/icons/stroked">Glyphs.co</a>)</em>
-                    </div> -->
                     <div class="panel-body">
-
-                        <div class="icon-grid">
-                            <div class="col-lg-3 col-md-3 col-sm-6 " ng-repeat="appliance in appliances | filter: checked==false" style="padding: 10px">
-
-                                <a style="font-family: 'Quicksand', sans-serif;font-size: 20px; color: grey" href="{{appliance.timeline}}" ng-click="storeAppId(appliance.channel_name)">{{appliance.device_name}}</a><br>
+                      <div class="icon-grid">
+                            <div class="col-lg-3 col-md-3 col-sm-6 "
+                                 ng-repeat="appliance in appliances | filter: checked==false" style="padding: 10px">
+                                    <a style="font-family: 'Quicksand', sans-serif;font-size: 20px; color: grey"
+                                   href="analytics.html" ng-click="storeAppId(appliance.channel_name)">{{appliance.device_name}}</a><br>
                                 <br><br>
-                                <img  class="svg" src="{{appliance.image}}" width="200px" style="margin: 10px">
+                                <img class="svg" src="{{appliance.image}}" width="200px" style="margin: 10px">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- Add/Delete device-->
         <div class="row">
             <div class="col-md-2">
-                <!-- Trigger the modal with a button -->
                 <div class="container">
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" role="dialog">
@@ -100,21 +73,32 @@
                                 <div class="modal-body">
                                     <!--Form-->
                                     <form novalidate class="simple-form">
-                                        <input class="form-control" placeholder="Device Id" type="text" ng-model="appliance.device_id"/><br />
-                                        <input class="form-control" placeholder="Device Name" type="text" ng-model="appliance.device_name"/><br />
-                                        <input class="form-control" placeholder="Channel Name" type="text" ng-model="appliance.channel_name"/><br />
-                                        <input class="form-control" placeholder="Device Information" type="text" ng-model="appliance.device_info"/><br />
+                                        <input class="form-control" placeholder="Device Id" type="text"
+                                               ng-model="appliance.device_id"/><br/>
+                                        <input class="form-control" placeholder="Device Name" type="text"
+                                               ng-model="appliance.device_name"/><br/>
+                                        <input class="form-control" placeholder="Channel Name" type="text"
+                                               ng-model="appliance.channel_name"/><br/>
+                                        <input class="form-control" placeholder="Device Information" type="text"
+                                               ng-model="appliance.device_info"/><br/>
                                         <select class="form-control" ng-model="appliance.device_type">
-                                            <option  value="mobile">Mobile</option>
+                                            <option value="mobile">Mobile</option>
                                             <option value="tv">TV</option>
                                         </select>
-                                        <input type="checkbox" ng-model="appliance.status" value="Active" style="padding-right: 30px">   Active<br /><br />
-                                        <button type="submit" class="btn btn-primary" ng-click="add(appliance)" value="Save" >Submit Button</button>
-                                        <button type="reset" class="btn btn-default" ng-click="reset()" value="Reset">Reset Button</button>
+                                        <input type="checkbox" ng-model="appliance.status" value="Active"
+                                               style="padding-right: 30px"> Active<br/><br/>
+                                        <button type="submit" class="btn btn-primary" ng-click="add(appliance)"
+                                                value="Save">Submit Button
+                                        </button>
+                                        <button type="reset" class="btn btn-default" ng-click="reset()" value="Reset">
+                                            Reset Button
+                                        </button>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="findByUserId()">Close</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal"
+                                            ng-click="findByUserId()">Close
+                                    </button>
                                 </div>
                             </div>
 
@@ -126,12 +110,12 @@
             <!--delete form -->
             <div class="col-md-2">
                 <div class="container">
-                                       <!-- Modal -->
+                    <!-- Modal -->
                     <div class="modal fade" id="deleteModal" role="dialog">
                         <div class="modal-dialog">
 
                             <!-- Modal content-->
-                            <div class="modal-content" >
+                            <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     <h4 class="modal-title">Select the device to be deleted</h4>
@@ -139,14 +123,17 @@
                                 <div class="modal-body">
                                     <div class="container">
                                         <form role="form">
-                                            <div class="checkbox" ng-repeat="appliance in appliances | filter: checked==false">
+                                            <div class="checkbox"
+                                                 ng-repeat="appliance in appliances | filter: checked==false">
                                                 <label><input type="checkbox" ng-model="appliance.checked">{{appliance.device_name}}</label>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="remove()">Close</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal"
+                                            ng-click="remove()">Close
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -164,8 +151,8 @@
                     <ul role="menu" class="sub-nav">
                         <li role="menuitem">
                             <div class="sub-head"><a id="store-menu"
-                                                     data-floodlight-cat="nestc424" class="sub-menu-title"
-                                                     data-track-label="Store" title="Store"> Store </a></div>
+                                                     class="sub-menu-title"
+                                                      title="Store"> Store </a></div>
                             <ul role="menu">
                                 <li role="menuitem"><a
                                         data-track-label="Store - Thermostat"
@@ -256,16 +243,11 @@
     </footer>
 </div>
 <!--scripts-->
-
+<script src="js/angular.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controllers.js"></script>
 <script src="js/services.js"></script>
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/chart.min.js"></script>
-<script src="js/chart-data.js"></script>
-<script src="js/easypiechart.js"></script>
-<script src="js/easypiechart-data.js"></script>
-<script src="js/bootstrap-datepicker.js"></script>
 </body>
 </html>

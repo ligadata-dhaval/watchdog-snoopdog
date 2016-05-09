@@ -131,30 +131,6 @@ abbr {
     clear: both
 }
 
-@font-face {
-    font-family: "Fuller Sans";
-    src: url("/fonts/fuller_sans_dt/regular/2DC1D4_0_0.woff") format("woff"), url("/fonts/fuller_sans_dt/regular/2DC1D4_0_0.eot") format("embedded-opentype")
-}
-
-@font-face {
-    font-family: "Fuller Sans Bold";
-    src: url("/fonts/fuller_sans_dt/bold/2DC1D5_0_0.woff") format("woff"), url("/fonts/fuller_sans_dt/bold/2DC1D5_0_0.eot") format("embedded-opentype")
-}
-
-@font-face {
-    font-family: "Fuller Sans Italic";
-    src: url("/fonts/fuller_sans_dt/italic/2DC1D5_1_0.woff") format("woff"), url("/fonts/fuller_sans_dt/italic/2DC1D5_1_0.eot") format("embedded-opentype")
-}
-
-@font-face {
-    font-family: "Fuller Sans Light";
-    src: url("/fonts/fuller_sans_dt/light/2DC1D3_0_0.woff") format("woff"), url("/fonts/fuller_sans_dt/light/2DC1D3_0_0.eot") format("embedded-opentype")
-}
-
-@font-face {
-    font-family: "Fuller Sans ExtraLight";
-    src: url("/fonts/fuller_sans_dt/extra_light/2DC1D0_0_0.woff") format("woff"), url("/fonts/fuller_sans_dt/extra_light/2DC1D0_0_0.eot") format("embedded-opentype")
-}
 
 /*! Copyright 2013-2015 Nest Labs, All rights reserved *//*! Copyright 2013 Nest Labs, All rights reserved *//*! Copyright 2016 Nest Labs, All rights reserved *//*! Copyright 2013 Nest Labs, All rights reserved */
 body {
@@ -2530,7 +2506,6 @@ select[multiple] {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     #global-nav-search-form .clear-icon {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
         background-size: 130px 4751px
     }
 }
@@ -5499,7 +5474,6 @@ html.no-touchevents #footer .footer-main-nav ul[role="menu"] {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .nl-locale-chooser .locale > li[role="menuitem"] a span.flag {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
         background-size: 130px 4751px
     }
 }
@@ -5516,7 +5490,7 @@ html.no-touchevents #footer .footer-main-nav ul[role="menu"] {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .nl-locale-chooser .locale > li[role="menuitem"] a[lang="en-CA"] span.flag, .nl-locale-chooser .locale > li[role="menuitem"] a[lang="fr-CA"] span.flag {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -5533,7 +5507,6 @@ html.no-touchevents #footer .footer-main-nav ul[role="menu"] {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .nl-locale-chooser .locale > li[role="menuitem"] a[lang="en-GB"] span.flag {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
         background-size: 130px 4751px
     }
 }
@@ -5550,7 +5523,6 @@ html.no-touchevents #footer .footer-main-nav ul[role="menu"] {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .nl-locale-chooser .locale > li[role="menuitem"] a[lang="fr-FR"] span.flag {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
         background-size: 130px 4751px
     }
 }
@@ -5582,12 +5554,6 @@ html.no-touchevents #footer .footer-main-nav ul[role="menu"] {
     display: inline-block
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
-    .nl-locale-chooser .locale > li[role="menuitem"] a[lang="nl-BE"] span.flag, .nl-locale-chooser .locale > li[role="menuitem"] a[lang="fr-BE"] span.flag {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
-        background-size: 130px 4751px
-    }
-}
 
 .nl-locale-chooser .locale > li[role="menuitem"] a[lang="en-IE"] span.flag {
     background-image: url("/images/sprites/global/sprites-3ab0349b86.png");
@@ -5601,7 +5567,7 @@ html.no-touchevents #footer .footer-main-nav ul[role="menu"] {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .nl-locale-chooser .locale > li[role="menuitem"] a[lang="en-IE"] span.flag {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -8040,7 +8006,7 @@ body#nl-widget-router {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .nl-gallery .controls .left {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -8059,7 +8025,7 @@ body#nl-widget-router {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .nl-gallery .controls .right {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -8176,7 +8142,7 @@ body#nl-widget-router {
 
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi) {
     .nl-gallery .arrow {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -8195,7 +8161,7 @@ body#nl-widget-router {
 
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 144dpi) {
     .nl-gallery .arrow.right {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -8229,7 +8195,7 @@ body#nl-widget-router {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .pagination.dark-bg div, .pagination-hp.dark-bg div {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -8246,7 +8212,7 @@ body#nl-widget-router {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .pagination.dark-bg div.current, .pagination-hp.dark-bg div.current {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -9905,7 +9871,7 @@ html.no-touchevents .watch-video:hover, html.no-touchevents .watch-video:hover:b
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .social a .sprite.twitter {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -9921,7 +9887,7 @@ html.no-touchevents .watch-video:hover, html.no-touchevents .watch-video:hover:b
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .social a .sprite.twitter.small {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -9937,7 +9903,7 @@ html.no-touchevents .watch-video:hover, html.no-touchevents .watch-video:hover:b
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .social a .sprite.facebook {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -9953,7 +9919,7 @@ html.no-touchevents .watch-video:hover, html.no-touchevents .watch-video:hover:b
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .social a .sprite.facebook.small {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -9969,7 +9935,7 @@ html.no-touchevents .watch-video:hover, html.no-touchevents .watch-video:hover:b
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .social a .sprite.pinterest {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -9985,7 +9951,7 @@ html.no-touchevents .watch-video:hover, html.no-touchevents .watch-video:hover:b
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .social a .sprite.pinterest.small {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
+
         background-size: 130px 4751px
     }
 }
@@ -10001,7 +9967,6 @@ html.no-touchevents .watch-video:hover, html.no-touchevents .watch-video:hover:b
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .social a .sprite.google-plus {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
         background-size: 130px 4751px
     }
 }
@@ -10017,7 +9982,6 @@ html.no-touchevents .watch-video:hover, html.no-touchevents .watch-video:hover:b
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
     .social a .sprite.google-plus.small {
-        background-image: url("/images/sprites/global/sprites@2x-9582f9bc4a.png");
         background-size: 130px 4751px
     }
 }
