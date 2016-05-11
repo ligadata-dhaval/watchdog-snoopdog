@@ -9,6 +9,7 @@
     "cors": "2.x",
     "express": "*",
     "jsonfile": "^2.3.0",
-    "mongoose": "^4.4.12"
+    "mongoose": "^4.4.12",
+    "mysql": "^2.10.2"
   }
 }

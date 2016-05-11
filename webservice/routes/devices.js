@@ -7,34 +7,76 @@ var coefficient = require('../data/coefficient');
 var cassandra =  require('cassandra-driver');
 var async = require('async');
 var jsonfile = require('jsonfile');
+var mysql = require('../conf/mysql-db');
 
 
-exports.getWeeklyUsage = function(req, res) {
-    var userId = req.params.userId;
+exports.getOverallUsage = function(req, res) {
+    //var payload = req.body;
+    //var start_date = payload.start_date;
+    //var end_date = payload.end_date
+    //var diff = payload.diff;
+    var device_type = req.params.deviceType;
+    var device_id = req.params.deviceId;
 
-    //fetch all appliances for this user
+    async.waterfall([
+        function(callback){
+            var con = mysql.getConnection();
+            console.log(device_id);
+            con.query("SELECT avg(averagevalues) as avg FROM watchdog.dailystatisticsdata where device_id =?",[device_id],function(err,rows) {
+                if(err)
+                    console.log("Error Selecting123 : %s ",err );
+                else {
+                    console.log(rows[0].avg + '******************');
+                    callback(null, rows[0].avg, device_type, con);
+                }
+            });
+        },
+        function(urdevice, device_type, con){
+            con.query("select avg(averagevalues) as avg from dailystatisticsalldevice where device_type =?",[device_type], function(err, result) {
+                if(err)
+                    console.log("Error Selecting456 : %s ",err );
+                else {
+                    console.log(result[0].avg + '%%%%%%%%%%%%%%%%');
 
-    //for each appliance fetch the usagestatistics
+                    var data = {
+                        "columns": [
+                            ['Your Device(Average Usage)', urdevice],
+                            ['All '+device_type+'(Average Usage)', result[0].avg]
+                        ],
+                            type: 'pie'
+                    }
+                    console.log(JSON.stringify(data) + '############');
+                    res.send(data);
+                    con.end();
 
+                }
+            })
+        }
+    ], function(err, data){
+        if(err) console.log(err);
+        console.log(data);
+    });
 }
 
 exports.getDeviceHealth = function(req, res){
-  var payload = req.body;
-  var start_date = payload.start_date;
-  var end_date = payload.end_date
-  var diff = payload.diff;
-  var device_type = payload.device_type;
+    var payload = req.body;
+    var start_date = payload.start_date;
+    var end_date = payload.end_date
+    var diff = payload.diff;
+    var device_type = payload.device_type;
+    var device_id = payload.device_id;
+
 
   async.waterfall([
             function(callback){
                 
-                switch(device_type){
-                  //select * from dailystatisticsdata where date >= '2013-04-03' and date <='2013-04-04' ALLOW FILTERING ;
-                  case "tv" : cquery = "select dailyusage from dailystatisticstelevisiondata where date >= '"+start_date+"' and date <='"+end_date+"' ALLOW FILTERING "; break;
-                  case "refrigerator" : cquery = "select dailyaverage from dailystatisticsrefrigeratordata where date >= '"+start_date+"' and date <='"+end_date+"' ALLOW FILTERING "; break;
-                  case "washing_machine" : cquery = "select dailyaverage from dailystatisticswashingmachinedata where date >= '"+start_date+"' and date <='"+end_date+"' ALLOW FILTERING "; break;
-                  case "mobile" : cquery = "select dailyaverage from dailystatisticsmobiledata where date >= '"+start_date+"' and date <='"+end_date+"' ALLOW FILTERING "; break;
-                }
+                //switch(device_type){
+                //  //select * from dailystatisticsdata where date >= '2013-04-03' and date <='2013-04-04' ALLOW FILTERING ;
+                //  case "tv" : cquery = "select dailyusage from dailystatisticstelevisiondata where date >= '"+start_date+"' and date <='"+end_date+"' ALLOW FILTERING "; break;
+                //  case "refrigerator" : cquery = "select dailyaverage from dailystatisticsrefrigeratordata where date >= '"+start_date+"' and date <='"+end_date+"' ALLOW FILTERING "; break;
+                //  case "washing_machine" : cquery = "select dailyaverage from dailystatisticswashingmachinedata where date >= '"+start_date+"' and date <='"+end_date+"' ALLOW FILTERING "; break;
+                //  case "mobile" : cquery = "select dailyaverage from dailystatisticsmobiledata where date >= '"+start_date+"' and date <='"+end_date+"' ALLOW FILTERING "; break;
+                //}
 
                 ////testing purpose
                 cquery = "select * from dailystatisticsrefrigeratordata";

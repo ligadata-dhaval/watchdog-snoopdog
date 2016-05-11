@@ -14,6 +14,11 @@
             <img src="images/logo.jpg" style="margin-top: 25px" width="200px"></a>
             <nav id="main-nav" data-swiftype-index="false" title="Main&nbsp;navigation">
                 <ul class="nav-list container" role="menubar">
+                    <li class="nav-products central-nav-item" role="menuitem"><a
+                            id="product-menu" href="device.html"
+                            class="menu-item">
+                        My Appliances </a>
+                    </li>
                     <li class="nav-products central-nav-item" role="menuitem"><a class="menu-item" data-toggle="modal" data-target="#myModal">
                         Add Product</a>
                     </li>
@@ -47,7 +52,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 "
                                  ng-repeat="appliance in appliances | filter: checked==false" style="padding: 10px">
                                     <a style="font-family: 'Quicksand', sans-serif;font-size: 20px; color: grey"
-                                   href="analytics.html" ng-click="storeAppId(appliance.channel_name)">{{appliance.device_name}}</a><br>
+                                   href="dashboard2.html" ng-click="storeAppId(appliance.channel_name)">{{appliance.device_name}}</a><br>
                                 <br><br>
                                 <img class="svg" src="{{appliance.image}}" width="200px" style="margin: 10px">
                             </div>

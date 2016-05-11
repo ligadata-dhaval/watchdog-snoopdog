@@ -82,6 +82,10 @@ angular.module('watchdog')
             console.log("service delete: "+id+" for username "+userid);
             $http.delete(baseURL+"/appliances/"+userid+"/"+id);
         }
+
+        appfac.overallUsage = function(device_id, device_type){
+            return $http.get(baseURL+"/devices/getOverallUsage/"+device_type+"/"+device_id);
+        }
         return appfac;
     }]);
 

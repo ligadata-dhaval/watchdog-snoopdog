@@ -1,5 +1,4 @@
-<html class="js no-filters fahrenheit spring region-CA dma-807 country-US no-touchevents video" lang="en-US"
-      itemscope="itemscope" itemtype="http://schema.org/WebPage"><!--<![endif]-->
+<html ng-app="watchdog"><!--<![endif]-->
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#"> <!--[if !IE]><!-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
@@ -9,13 +8,18 @@
           rel="stylesheet">
 
 </head>
-<body id="meet-nest-thermostat" class="thermostat meet">
+<body id="meet-nest-thermostat" class="thermostat meet" ng-controller="AnalyticsController" ng-init="showGraph('dev1','refrigerator')">
 <div id="main">
     <header id="main-header" class="header-bar content" data-swiftype-index="false">
         <div class="container"><a id="home-link" href="index.html" class="logo" title="Appliance Watchdog" itemprop="url">
             <img src="images/logo.jpg" style="margin-top: 25px" width="200px"></a>
             <nav id="main-nav" data-swiftype-index="false" title="Main&nbsp;navigation">
                 <ul class="nav-list container" role="menubar">
+                    <li class="nav-products central-nav-item" role="menuitem"><a
+                            id="product-menu" href="device.html"
+                            class="menu-item">
+                        My Appliances </a>
+                    </li>
                     <li class="nav-products central-nav-item" role="menuitem"><a class="menu-item" data-toggle="modal" data-target="#myModal">
                         Add Product</a>
                     </li>
@@ -93,7 +97,7 @@
                                         title="Nest&nbsp;Thermostat"> Watchdog&nbsp; TV  </a></li>
                                 <li role="menuitem"><a
                                         data-track-label="Store - Protect" title="Nest&nbsp;Protect">
-                                    Wwatchdog&nbsp;Mobile </a></li>
+                                    Watchdog&nbsp;Mobile </a></li>
                                 <li role="menuitem"><a
                                         data-track-label="Store - Camera" title="Nest&nbsp;Cam"> Watchdog&nbsp;Cam </a>
                                 </li>
@@ -175,118 +179,124 @@
             </ul>
         </div>
     </footer>
-    <script>
-        var chart = c3.generate({
-            bindto: '#chart',
-            data: {
-                x : 'date',
-                xFormat : '%Y%m%d',
-                columns: [
-//            ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
-                    ['date', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
-                    ['sample', 30, 200, 100, 400, 150, 250],
-                    ['sample2', 130, 300, 200, 450, 250, 350]
-                ]
-            },
-            grid: {
-                x: {
-                    show: true,
-                },
-                y: {
-                    show: true,
-                }
-            },
-            axis : {
-                x : {
-                    type : 'timeseries',
-                    tick : {
-//              format : "%m/%d" // https://github.com/mbostock/d3/wiki/Time-Formatting#wiki-format
-                        format : "%e %b %y" // https://github.com/mbostock/d3/wiki/Time-Formatting#wiki-format
-                    }
-                }
-            }
-        });
+    <!--<script>-->
+        <!--var chart = c3.generate({-->
+            <!--bindto: '#chart',-->
+            <!--data: {-->
+                <!--x : 'date',-->
+                <!--xFormat : '%Y%m%d',-->
+                <!--columns: [-->
+<!--//            ['x', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],-->
+                    <!--['date', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],-->
+                    <!--['sample', 30, 200, 100, 400, 150, 250],-->
+                    <!--['sample2', 130, 300, 200, 450, 250, 350]-->
+                <!--]-->
+            <!--},-->
+            <!--grid: {-->
+                <!--x: {-->
+                    <!--show: true,-->
+                <!--},-->
+                <!--y: {-->
+                    <!--show: true,-->
+                <!--}-->
+            <!--},-->
+            <!--axis : {-->
+                <!--x : {-->
+                    <!--type : 'timeseries',-->
+                    <!--tick : {-->
+<!--//              format : "%m/%d" // https://github.com/mbostock/d3/wiki/Time-Formatting#wiki-format-->
+                        <!--format : "%e %b %y" // https://github.com/mbostock/d3/wiki/Time-Formatting#wiki-format-->
+                    <!--}-->
+                <!--}-->
+            <!--}-->
+        <!--});-->
 
-    </script>
-    <script type="text/javascript">
+    <!--</script>-->
+    <!--<script type="text/javascript">-->
 
-        var chart = c3.generate({
-            bindto: '#chart2',
-            data: {
-                x: 'x',
-                //        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
-                columns: [
-                    ['x', '2016-04-01', '2016-04-02', '2016-04-03', '2016-04-04', '2016-04-05', '2016-04-06'
-                        ,'2016-04-07','2016-04-08'
-                        ,'2016-04-09','2016-04-10','2016-04-11','2016-04-12','2016-04-13','2016-04-14'
-                        ,'2016-04-15','2016-04-16',
-                        '2016-04-17','2016-04-18','2016-04-19','2016-04-20','2016-04-21','2016-04-22'
-                        ,'2016-04-23','2016-04-24',
-                        '2016-04-25','2016-04-26','2016-04-27','2016-04-28','2016-04-29','2016-04-30'
-                    ],
-                    //            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
-                    ['refrigerator1', 18.66, 19.55, 18.36, 17.98, 20.23, 16.10,16.79,20.98,21.98,21.90,18.79
-                        ,19.87,18.98,17.78,18.98,18.54,19.08,17.94,21.01,20.20,19.98,30.07,20.40,19.76,20.99,19.9,20.54,
-                        19.67,19.88,20.26],
-                    ['All refrigerators', 18.66, 19.66, 18.36, 18.98, 19.23, 19.10,18.79,19.98,18.79,19.66,18.79,
-                        19.23,19.79,19.89,18.98,19.58,19.67,18.99,19.45,19.87,19.67,18.98,19.34,19.32,18.97,19.87,
-                        19.64,19.32,19.79,19.54]
-                ]
-            },
-            grid: {
-                x: {
-                    show: true,
-                },
-                y: {
-                    show: true,
-                }
-            },
-            axis: {
-                x: {
-                    type: 'timeseries',
-                    tick: {
-                        format: '%Y-%m-%d'
-                    }
-                }
-            }
-        });
-    </script>
-    <script type="text/javascript">
+        <!--var chart = c3.generate({-->
+            <!--bindto: '#chart2',-->
+            <!--data: {-->
+                <!--x: 'x',-->
+                <!--//        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'-->
+                <!--columns: [-->
+                    <!--['x', '2016-04-01', '2016-04-02', '2016-04-03', '2016-04-04', '2016-04-05', '2016-04-06'-->
+                        <!--,'2016-04-07','2016-04-08'-->
+                        <!--,'2016-04-09','2016-04-10','2016-04-11','2016-04-12','2016-04-13','2016-04-14'-->
+                        <!--,'2016-04-15','2016-04-16',-->
+                        <!--'2016-04-17','2016-04-18','2016-04-19','2016-04-20','2016-04-21','2016-04-22'-->
+                        <!--,'2016-04-23','2016-04-24',-->
+                        <!--'2016-04-25','2016-04-26','2016-04-27','2016-04-28','2016-04-29','2016-04-30'-->
+                    <!--],-->
+                    <!--//            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],-->
+                    <!--['refrigerator1', 18.66, 19.55, 18.36, 17.98, 20.23, 16.10,16.79,20.98,21.98,21.90,18.79-->
+                        <!--,19.87,18.98,17.78,18.98,18.54,19.08,17.94,21.01,20.20,19.98,30.07,20.40,19.76,20.99,19.9,20.54,-->
+                        <!--19.67,19.88,20.26],-->
+                    <!--['All refrigerators', 18.66, 19.66, 18.36, 18.98, 19.23, 19.10,18.79,19.98,18.79,19.66,18.79,-->
+                        <!--19.23,19.79,19.89,18.98,19.58,19.67,18.99,19.45,19.87,19.67,18.98,19.34,19.32,18.97,19.87,-->
+                        <!--19.64,19.32,19.79,19.54]-->
+                <!--]-->
+            <!--},-->
+            <!--grid: {-->
+                <!--x: {-->
+                    <!--show: true,-->
+                <!--},-->
+                <!--y: {-->
+                    <!--show: true,-->
+                <!--}-->
+            <!--},-->
+            <!--axis: {-->
+                <!--x: {-->
+                    <!--type: 'timeseries',-->
+                    <!--tick: {-->
+                        <!--format: '%Y-%m-%d'-->
+                    <!--}-->
+                <!--}-->
+            <!--}-->
+        <!--});-->
+    <!--</script>-->
+    <!--<script type="text/javascript">-->
 
-        var chart = c3.generate({
-            bindto : '#chart3',
-            data: {
-                x: 'x',
-                //        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
-                columns: [
-                    ['x', '2016-04-01', '2016-04-02', '2016-04-03', '2016-04-04', '2016-04-05', '2016-04-06','2016-04-07'],
-                    //            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
-                    ['refrigerator1', 18.66, 19.55, 18.36, 17.98, 20.23, 16.10,16.79],
-                    ['All refrigerators', 18.66, 19.66, 18.36, 18.98, 19.23, 19.10,18.79]
-                ]
-            },
-            grid: {
-                x: {
-                    show: true,
-                },
-                y: {
-                    show: true,
-                }
-            },
-            axis: {
-                x: {
-                    type: 'timeseries',
-                    tick: {
-                        format: '%Y-%m-%d'
-                    }
-                }
-            }
-        });
+        <!--var chart = c3.generate({-->
+            <!--bindto : '#chart3',-->
+            <!--data: {-->
+                <!--x: 'x',-->
+                <!--//        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'-->
+                <!--columns: [-->
+                    <!--['x', '2016-04-01', '2016-04-02', '2016-04-03', '2016-04-04', '2016-04-05', '2016-04-06','2016-04-07'],-->
+                    <!--//            ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],-->
+                    <!--['refrigerator1', 18.66, 19.55, 18.36, 17.98, 20.23, 16.10,16.79],-->
+                    <!--['All refrigerators', 18.66, 19.66, 18.36, 18.98, 19.23, 19.10,18.79]-->
+                <!--]-->
+            <!--},-->
+            <!--grid: {-->
+                <!--x: {-->
+                    <!--show: true,-->
+                <!--},-->
+                <!--y: {-->
+                    <!--show: true,-->
+                <!--}-->
+            <!--},-->
+            <!--axis: {-->
+                <!--x: {-->
+                    <!--type: 'timeseries',-->
+                    <!--tick: {-->
+                        <!--format: '%Y-%m-%d'-->
+                    <!--}-->
+                <!--}-->
+            <!--}-->
+        <!--});-->
 
 
 
-    </script>
+    <!--</script>-->
+
     <script src="js/fb.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
 </div>
 </body>
 </html>
