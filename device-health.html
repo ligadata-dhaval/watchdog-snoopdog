@@ -22,161 +22,134 @@
             fill-opacity: 0.8
         }
     </style>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/2-col-portfolio.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
-<body id="meet-nest-thermostat" class="thermostat meet" ng-controller="AnalyticsController" ng-init="showGraph('dev1','refrigerator')">
-<header id="main-header" class="header-bar content" data-swiftype-index="false">
-    <div class="container"><a id="home-link" href="index.html" class="logo" title="Appliance Watchdog" itemprop="url">
-        <img src="images/logo.jpg" style="margin-top: 25px" width="200px"></a>
-        <nav id="main-nav" data-swiftype-index="false" title="Main&nbsp;navigation">
-            <ul class="nav-list container" role="menubar">
-                <li class="nav-products central-nav-item" role="menuitem"><a
-                        id="product-menu" href="device.html"
-                        class="menu-item">
-                    My Appliances </a>
-                </li>
-                <li class="nav-products central-nav-item" role="menuitem"><a class="menu-item" data-toggle="modal" data-target="#myModal">
-                    Add Product</a>
-                </li>
+<body id="meet-nest-thermostat" class="thermostat meet" ng-controller="DeviceController">
+<div id="main">
+    <header id="main-header" class="header-bar content" data-swiftype-index="false">
+        <div class="container"><a id="home-link" href="index.html" class="logo" title="Appliance Watchdog" itemprop="url">
+            <img src="images/logo.jpg" style="margin-top: 25px" width="200px"></a>
+            <nav id="main-nav" data-swiftype-index="false" title="Main&nbsp;navigation">
+                <ul class="nav-list container" role="menubar">
+                    <li class="nav-products central-nav-item" role="menuitem"><a
+                            id="product-menu" href="device.html"
+                            class="menu-item">
+                        My Appliances </a>
+                    </li>
+                    <li class="nav-products central-nav-item" role="menuitem"><a class="menu-item" data-toggle="modal" data-target="#myModal">
+                        Add Product</a>
+                    </li>
 
-                <li class="nav-products central-nav-item" role="menuitem"><a
-                        id="product-menu"
-                        class="menu-item" title="Products" data-toggle="modal" data-target="#deleteModal">
-                    Delete Product</a>
+                    <li class="nav-products central-nav-item" role="menuitem"><a
+                            id="product-menu"
+                            class="menu-item" title="Products" data-toggle="modal" data-target="#deleteModal">
+                        Delete Product</a>
 
-                </li>
-                <li class="nav-products central-nav-item" role="menuitem"><a
-                        id="product-menu" href="device-dashboard.html"
-                        class="menu-item">
-                    Dashboard </a>
-                </li>
-                <li class="nav-products central-nav-item" role="menuitem"><a
-                        id="product-menu"
-                        class="menu-item" onclick="logout()">
-                    Logout </a>
-                </li>
-            </ul>
-        </nav>
-        <button class="menu-toggle" title="Menu"><span>Menu</span></button>
+                    </li>
+                    <li class="nav-products central-nav-item" role="menuitem"><a
+                            id="product-menu" href="device-dashboard.html"
+                            class="menu-item">
+                        Dashboard </a>
+                    </li>
+                    <li class="nav-products central-nav-item" role="menuitem"><a
+                            id="product-menu"
+                            class="menu-item" onclick="logout()">
+                        Logout </a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" title="Menu"><span>Menu</span></button>
+        </div>
+    </header>
+    <!-- Page Content -->
+    <div class="container">
+    <br><br>
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-12 portfolio-item">
+                <h3>
+                    <p>Device Details</p>
+                </h3>
+                <p>
+                    Device id:  {{applianceDetails.device_id}}<br>
+                    Device name:  {{applianceDetails.device_name}}<br>
+                    Channel name:  {{applianceDetails.channel_name}}<br>
+                    Device info:  {{applianceDetails.device_info}}</p>
+
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <div id="chart"></div>
+                </a>
+                <h3>
+                    <p>Average Usage of your device</p>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <div id="chart1"></div>
+                </a>
+                <h3>
+                    <a href="#">Average Usage of similar device</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <div id="chart2"></div>
+                </a>
+                <h3>
+                    <a href="#">Project Three</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <div id="chart5"></div>
+                </a>
+                <h3>
+                    <a href="#">Mean Time To Repair(MTTR)</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <div id="chart4"></div>
+                </a>
+                <h3>
+                    <a href="#">Mean Time to Failure (MTTF)</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-6 portfolio-item">
+                <a href="#">
+                    <div id="chart3"></div>
+                </a>
+                <h3>
+                    <a href="#">Mean Time To Repair(MTTR)</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+        <br><br>
+
     </div>
-</header>
-
-
-<!-- Page Content -->
-<div class="container">
-
-    <!--&lt;!&ndash; Page Header &ndash;&gt;-->
-    <!--<div class="row">-->
-        <!--<div class="col-lg-12">-->
-            <!--<h1 class="page-header">-->
-                <!--<small>Analytics</small>-->
-            <!--</h1>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!-- /.row -->
-
-    <!-- Projects Row -->
-    <div class="row">
-        <div class="col-md-12 portfolio-item">
-            <h3>
-                <p>Device Details</p>
-            </h3>
-            <p>
-                Device id:  {{applianceDetails.device_id}}<br>
-                Device name:  {{applianceDetails.device_name}}<br>
-                Channel name:  {{applianceDetails.channel_name}}<br>
-            Device info:  {{applianceDetails.device_info}}</p>
-
-            </p>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6 portfolio-item">
-            <a href="#">
-                <div id="chart"></div>
-            </a>
-            <h3>
-                <p>Average Usage of your device</p>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-        <div class="col-md-6 portfolio-item">
-            <a href="#">
-                <div id="chart1"></div>
-            </a>
-            <h3>
-                <a href="#">Average Usage of similar device</a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-    </div>
-    <!-- /.row -->
-
-    <!-- Projects Row -->
-    <div class="row">
-        <div class="col-md-6 portfolio-item">
-            <a href="#">
-                <div id="chart2"></div>
-            </a>
-            <h3>
-                <a href="#">Project Three</a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-        <div class="col-md-6 portfolio-item">
-            <a href="#">
-                <div id="chart5"></div>
-            </a>
-            <h3>
-                <a href="#">Mean Time To Repair(MTTR)</a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-    </div>
-    <!-- /.row -->
-
-    <!-- Projects Row -->
-    <div class="row">
-        <div class="col-md-6 portfolio-item">
-            <a href="#">
-                <div id="chart4"></div>
-            </a>
-            <h3>
-                <a href="#">Mean Time to Failure (MTTF)</a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-        <div class="col-md-6 portfolio-item">
-            <a href="#">
-                <div id="chart3"></div>
-            </a>
-            <h3>
-                <a href="#">Mean Time To Repair(MTTR)</a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-
-    <hr>
     <footer id="footer" class="content wrapper ">
         <div class="container">
             <div class="nav-block">
@@ -274,21 +247,17 @@
             </ul>
         </div>
     </footer>
-
 </div>
-
-<!-- /.container -->
-<script src="js/fb.js"></script>
 <script src="js/angular.min.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/pubnub.min.js"></script>
+<script src="js/pubnub-c3.js"></script>
+<script src="js/d3.v3.min.js" charset="utf-8"></script>
+<script src="js/c3.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controllers.js"></script>
 <script src="js/services.js"></script>
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-<script src="js/d3.v3.min.js" charset="utf-8"></script>
-<script src="js/c3.min.js"></script>
-
+<script src="js/fb.js"></script>
 </body>
-
 </html>
