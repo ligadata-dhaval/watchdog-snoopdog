@@ -38,7 +38,7 @@
 
 </head>
 
-<body id="meet-nest-thermostat" class="thermostat meet" ng-controller="AnalyticsController" ng-init="showGraph('dev5','refrigerator')">
+<body id="meet-nest-thermostat" class="thermostat meet" ng-controller="AnalyticsController" ng-init="showGraph()">
 <header id="main-header" class="header-bar content" data-swiftype-index="false">
     <div class="container"><a id="home-link" href="index.html" class="logo" title="Appliance Watchdog" itemprop="url">
         <img src="images/logo.jpg" style="margin-top: 25px" width="200px"></a>
@@ -90,6 +90,21 @@
     <!-- /.row -->
 
     <!-- Projects Row -->
+
+    <div class="row">
+        <div class="col-md-12 portfolio-item">
+            <h3>
+                <p>Device Details</p>
+            </h3>
+            <p>
+                Device id:  {{applianceDetails.device_id}}<br>
+                Device name:  {{applianceDetails.device_name}}<br>
+                Channel name:  {{applianceDetails.channel_name}}<br>
+            Device info:  {{applianceDetails.device_info}}</p>
+
+            </p>
+        </div>
+    </div>
 
     <!-- /.row -->
 

@@ -52,7 +52,7 @@
                             <div class="col-lg-3 col-md-3 col-sm-6 "
                                  ng-repeat="appliance in appliances | filter: checked==false" style="padding: 10px">
                                     <a style="font-family: 'Quicksand', sans-serif;font-size: 20px; color: grey"
-                                   href="device-health.html" ng-click="storeAppId(appliance.channel_name)">{{appliance.device_name}}</a><br>
+                                   href="device-health.html" ng-click="storeAppId(appliance)">{{appliance.device_name}}</a><br>
                                 <a style ="font-family: 'Quicksand', sans-serif;font-size: 10px; color: black" href="#">Maintenance</a><a style ="font-family: 'Quicksand', sans-serif;font-size: 10px; color: black">&nbsp;&nbsp;|&nbsp;&nbsp;</a>
                                 <a style ="font-family: 'Quicksand', sans-serif;font-size: 10px; color: black" href="#">Dead</a>
                                 <br><br>
@@ -80,8 +80,6 @@
                                 <div class="modal-body">
                                     <!--Form-->
                                     <form novalidate class="simple-form">
-                                        <input class="form-control" placeholder="Device Id" type="text"
-                                               ng-model="appliance.device_id"/><br/>
                                         <input class="form-control" placeholder="Device Name" type="text"
                                                ng-model="appliance.device_name"/><br/>
                                         <input class="form-control" placeholder="Channel Name" type="text"
@@ -97,7 +95,7 @@
                                         Active
                                         <input type="checkbox" ng-model="appliance.status" value="Active"
                                                style="padding-right: 30px"> <br/><br/>
-                     0p                 <button type="submit" class="btn btn-primary" ng-click="add(appliance)"
+                                      <button type="submit" class="btn btn-primary" ng-click="add(appliance)"
                                                 value="Save">Submit
                                         </button>
                                         <button type="reset" class="btn btn-default" ng-click="reset()" value="Reset">
