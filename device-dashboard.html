@@ -75,7 +75,7 @@
         <!-- /.row -->
 
         <!-- Project One -->
-        <div class="row"  ng-repeat="appliance in appliances | filter: 'mobile'">
+        <div class="row" >
             <div class="col-md-7">
                 <div id="chartmobile"></div>
             </div>
@@ -89,7 +89,7 @@
         <!-- /.row -->
 
         <!-- Project One -->
-        <div class="row"  ng-repeat="appliance in appliances | filter: 'tv'">
+        <div class="row"  >
 
             <div class="col-md-7">
                 <div id="charttv"></div>
@@ -248,7 +248,7 @@
         }
     });
     eon.chart({
-        channel: "mobile",
+        channel: "cpu",
         generate: {
             bindto: '#chartmobile',
             data: {
@@ -267,20 +267,21 @@
         }
     });
     eon.chart({
-        channel: "tv",
+        history: true,
+        channel: 'tv',
+        flow: true,
         generate: {
             bindto: '#charttv',
             data: {
-                type: 'bar',
+                x: 'x',
+                labels: false
             },
-            gauge: {
-                min: 0,
-                max: 100
-            },
-            color: {
-                pattern: ['#FF0000', '#F6C600', '#60B044'],
-                threshold: {
-                    values: [30, 60, 90]
+            axis : {
+                x : {
+                    type : 'timeseries',
+                    tick: {
+                        format: '%H:%M:%S'
+                    }
                 }
             }
         }
