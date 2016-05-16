@@ -24,7 +24,7 @@
     </style>
 </head>
 
-<body id="meet-nest-thermostat" class="thermostat meet" ng-controller="AnalyticsController">
+<body id="meet-nest-thermostat" class="thermostat meet" ng-controller="AnalyticsController" ng-init="showGraph()">
 <div id="main">
     <header id="main-header" class="header-bar content" data-swiftype-index="false">
         <div class="container"><a id="home-link" href="index.html" class="logo" title="Appliance Watchdog" itemprop="url">
@@ -104,7 +104,7 @@
                                 <div id="chart3"></div>
                             </a>
                             <h3>
-                                Monthly Usage
+                                Day-wise Usage
                             </h3>
                             <p>This is the monthly comparison of your device with other devices of similar types and the industry standard values.</p>
                         </div>

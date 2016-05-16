@@ -53,8 +53,7 @@
                                  ng-repeat="appliance in appliances | filter: checked==false" style="padding: 10px">
                                     <a style="font-family: 'Quicksand', sans-serif;font-size: 20px; color: grey"
                                    href="device-health.html" ng-click="storeAppId(appliance)">{{appliance.device_name}}</a><br>
-                                <a style ="font-family: 'Quicksand', sans-serif;font-size: 10px; color: black" href="#">Maintenance</a><a style ="font-family: 'Quicksand', sans-serif;font-size: 10px; color: black">&nbsp;&nbsp;|&nbsp;&nbsp;</a>
-                                <a style ="font-family: 'Quicksand', sans-serif;font-size: 10px; color: black" href="#">Dead</a>
+
                                 <br><br>
                                 <img class="svg" src="{{appliance.image}}" width="200px" style="margin: 10px">
                             </div>
@@ -94,7 +93,7 @@
                                             <option value="refrigerator">Refrigerator</option>
                                             <option value="washing_machine">Washing Machine</option>
                                         </select>
-                                        Active
+                                        <label>Active</label>
                                         <input type="checkbox" ng-model="appliance.status" value="Active"
                                                style="padding-right: 30px"> <br/><br/>
                                       <button type="submit" class="btn btn-primary" ng-click="add(appliance)"

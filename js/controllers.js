@@ -250,7 +250,7 @@ angular.module('watchdog',[])
                                 type: 'timeseries',
                                 tick: {
                                     fit: true,
-                                    format: "%e %b %y"
+                                    format: "%e %b"
                                 }
                             }
                         }
