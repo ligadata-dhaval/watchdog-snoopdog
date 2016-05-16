@@ -62,7 +62,7 @@ function testAPI() {
         console.log('Successful login for: ' + JSON.stringify(response));
         sessionStorage.setItem("userid", response.id);
         //document.getElementById('status').innerHTML 'Thanks for logging in, ' + response.name + '!';
-        window.location="../device-dashboard.html";
+        window.location="device-dashboard.html";
     });
 }
 

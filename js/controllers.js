@@ -112,6 +112,8 @@ angular.module('watchdog',[])
     controller('AnalyticsController',['$scope','appFactory' , function($scope,appFactory) {
 
         $scope.overallUsage = null;
+        $scope.weeklyUsage = null;
+        $scope.deviceDateUsage = null;
         $scope.chart = null;
 
         $scope.showGraph = function(device_id,device_type) {
@@ -122,58 +124,58 @@ angular.module('watchdog',[])
                     $scope.overallUsage = response.data;
                     console.log("Appliance Usage"+JSON.stringify($scope.overallUsage));
 
-                    c3.generate({
-                        bindto:'#chart',
-                        data: {
-                            columns: [
-                                ['Your Device(Average Usage)', $scope.overallUsage.columns[0][1]]
-                            ],
-                            type: 'gauge'
-                        },
-                        pie: {
-                            label: {
-                                format: function (value, ratio, id) {
-                                    return d3.format('$')(value);
-                                }
-                            }
-                        }
-                    });
+                    //c3.generate({
+                    //    bindto:'#chart',
+                    //    data: {
+                    //        columns: [
+                    //            ['Your Device(Average Usage)', $scope.overallUsage.columns[0][1]]
+                    //        ],
+                    //        type: 'gauge'
+                    //    },
+                    //    pie: {
+                    //        label: {
+                    //            format: function (value, ratio, id) {
+                    //                return d3.format('$')(value);
+                    //            }
+                    //        }
+                    //    }
+                    //});
 
+                    //
+                    //c3.generate({
+                    //    bindto:'#chart1',
+                    //    data: {
+                    //        columns: [
+                    //            ['All '+device_type+' (Average Usage)', $scope.overallUsage.columns[1][1]]
+                    //        ],
+                    //        type: 'gauge',
+                    //        onclick: function (d, i) { console.log("onclick", d, i); },
+                    //        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+                    //        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+                    //    },
+                    //    gauge: {
+                    //        label: {
+                    //            format: function (value, ratio, id) {
+                    //                return d3.format('$')(value);
+                    //            }
+                    //        }
+                    //    }
+                    //    //gauge: {
+                    //    //
+                    //    //},
+                    //    //color: {
+                    //    //    pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
+                    //    //    threshold: {
+                    //    //        values: [30, 60, 90, 100]
+                    //    //    }
+                    //    //},
+                    //    //size: {
+                    //    //    height: 180
+                    //    //}
+                    //});
 
                     c3.generate({
                         bindto:'#chart1',
-                        data: {
-                            columns: [
-                                ['All '+device_type+' (Average Usage)', $scope.overallUsage.columns[1][1]]
-                            ],
-                            type: 'gauge',
-                            onclick: function (d, i) { console.log("onclick", d, i); },
-                            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-                            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
-                        },
-                        gauge: {
-                            label: {
-                                format: function (value, ratio, id) {
-                                    return d3.format('$')(value);
-                                }
-                            }
-                        }
-                        //gauge: {
-                        //
-                        //},
-                        //color: {
-                        //    pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
-                        //    threshold: {
-                        //        values: [30, 60, 90, 100]
-                        //    }
-                        //},
-                        //size: {
-                        //    height: 180
-                        //}
-                    });
-
-                    c3.generate({
-                        bindto:'#chart2',
                         data: {
                             columns: [
                                 ['Your Device(Average Usage)', $scope.overallUsage.columns[0][1]],
@@ -197,30 +199,7 @@ angular.module('watchdog',[])
 
 
                     c3.generate({
-                        bindto:'#chart3',
-                        data: {
-                            columns: [
-                                ['Your Device', $scope.overallUsage.columns[0][1]],
-                                ['All '+device_type, $scope.overallUsage.columns[1][1]]
-                            ],
-                            type: 'bar',
-                            onclick: function (d, i) { console.log("onclick", d, i); },
-                            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
-                            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
-                        },
-                        bar: {
-                            label: {
-                                format: function (value, ratio, id) {
-                                    return d3.format('$')(value);
-                                }
-                            }
-                        }
-
-                    });
-
-
-                    c3.generate({
-                        bindto:'#chart5',
+                        bindto:'#chart2',
                         data: {
                             columns: [
                                 ['Your Device', $scope.overallUsage.columns[0][1]],
@@ -245,34 +224,60 @@ angular.module('watchdog',[])
                         }
 
                     });
-
-
-
-
-
                 }
             );
+
+
+            appFactory.dateRangeData(device_id,device_type)
+                .then(
+                function(response) {
+                    console.log("Retrieving appliance usage");
+                    $scope.deviceDateUsage = response.data;
+                    console.log("Appliance Usage"+JSON.stringify($scope.overallUsage));
+
+                    c3.generate({
+                        bindto:'#chart3',
+                        data: $scope.deviceDateUsage,
+                        axis: {
+                            x: {
+                                type: 'timeseries',
+                                tick: {
+                                    fit: true,
+                                    format: "%e %b %y"
+                                }
+                            }
+                        }
+                    });
+                }
+            );
+
+            appFactory.weekRangeData(device_id,device_type)
+                .then(
+                function(response) {
+                    console.log("Retrieving appliance usage");
+                    $scope.weeklyUsage = response.data;
+                    console.log("FGJHKJSHKJHJKSHKJSHKJSHJKSH Appliance Usage"+JSON.stringify($scope.overallUsage));
+
+                    c3.generate({
+                        bindto:'#chart4',
+                        data: $scope.weeklyUsage,
+                        axis: {
+                            x: {
+                                type: 'timeseries',
+                                tick: {
+                                    fit: true,
+                                    format: "%e %b %y"
+                                }
+                            }
+                        }
+                    });
+                }
+            );
+
+
+
+
         }
-
-
-
-
-        //$scope.overallUsage = appFactory.overallUsage();
-
-        //console.log("In AController");
-
-        //$scope.showGraph = function() {
-        //    console.log("In AController122");
-        //    $scope.chart = c3.generate({
-        //        bindto: '#chart',
-        //        data: {
-        //            columns: [
-        //                ['data1', 30, 200, 100, 400, 150, 250],
-        //                ['data2', 50, 20, 10, 40, 15, 25]
-        //            ]
-        //        }
-        //    });
-        //}
 
 
     }])

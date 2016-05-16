@@ -9,6 +9,157 @@ var async = require('async');
 var jsonfile = require('jsonfile');
 var mysql = require('../conf/mysql-db');
 
+exports.getWeeklyUsage = function(req, res) {
+    var device_type = req.params.deviceType;
+    var device_id = req.params.deviceId;
+    var dateData = ['x', '2016-05-09','2016-05-10','2016-05-11','2016-05-12','2016-05-13','2016-05-14','2016-05-15'];
+    var deviceData = [];
+    var overAllData = [];
+    var standardData = [];
+    deviceData.push('Your Device')
+    overAllData.push('Device of this type');
+    standardData.push('Standard values (Recommended)');
+
+    async.waterfall([
+        function(callback){
+            var con = mysql.getConnection();
+            console.log(device_id);
+            con.query("SELECT date, averagevalues FROM watchdog.dailystatisticsdata where device_id =? and date in ('2016-05-09','2016-05-10','2016-05-11','2016-05-12','2016-05-13','2016-05-14','2016-05-15')",[device_id],function(err,rows) {
+                if(err)
+                    console.log("Error Selecting123 : %s ",err );
+                else {
+                    for (var i = 0; i < rows.length; i++) {
+                        //console.log('Date: '+rows[i].date);
+                        //dateData.push(rows[i].date);
+                        console.log('value : '+rows[i].averagevalues);
+                        deviceData.push(rows[i].averagevalues);
+                    }
+                    //console.log(rows[0].avg + '******************');
+                    callback(null, dateData, deviceData, device_type, con);
+                }
+            });
+        },
+        function(urDateData, urdeviceData, device_type, con){
+            console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ DEVICE TYPE $$$$$$$$$$$$$$$$$$$$$$$$$$"+device_type);
+            con.query("select date, averagevalues  from dailystatisticsalldevice where device_type =? and date in ('2016-05-09','2016-05-10','2016-05-11','2016-05-12','2016-05-13','2016-05-14','2016-05-15')",[device_type], function(err, result) {
+                if(err)
+                    console.log("Error Selecting456 : %s ",err );
+                else {
+                    //console.log(result[0].avg + '%%%%%%%%%%%%%%%%');
+                    var industryValue = healthData.deveiceCriticalHealth();
+
+                    switch (device_type) {
+                        case 'tv' : industryValue = industryValue.tv;break;
+                        case 'refrigerator' : industryValue = industryValue.refrigerator;break;
+                        case 'washing_machine': industryValue = industryValue.washing_machine;break;
+                    }
+
+                    for(var i =0;i < result.length; i++) {
+                        overAllData.push(result[i].averagevalues);
+                        standardData.push(industryValue)
+
+                    }
+                    console.log('Check this value '+industryValue);
+                    var data = {
+                        "x"  : "x",
+                        "columns": [
+                            urDateData,
+                            urdeviceData,
+                            overAllData,
+                            standardData
+                        ],
+                        type: 'spline'
+                    }
+                    console.log(JSON.stringify(data) + '############');
+                    res.send(data);
+                    con.end();
+
+                }
+            })
+        }
+    ], function(err, data){
+        if(err) console.log(err);
+        console.log(data);
+    });
+}
+
+
+
+exports.getDateUsage = function(req, res) {
+    var device_type = req.params.deviceType;
+    var device_id = req.params.deviceId;
+    var dateData = [];
+    var deviceData = [];
+    var overAllData = [];
+    var standardData = [];
+    dateData.push('x');
+    deviceData.push('Your Device')
+    overAllData.push('Device of this type');
+    standardData.push('Standard values (Recommended)');
+
+    async.waterfall([
+        function(callback){
+            var con = mysql.getConnection();
+            console.log(device_id);
+            con.query("SELECT date, averagevalues FROM watchdog.dailystatisticsdata where device_id =?",[device_id],function(err,rows) {
+                if(err)
+                    console.log("Error Selecting123 : %s ",err );
+                else {
+                    for (var i = 0; i < rows.length; i++) {
+                        console.log('Date: '+rows[i].date);
+                        dateData.push(rows[i].date);
+                        console.log('value : '+rows[i].averagevalues);
+                        deviceData.push(rows[i].averagevalues);
+                    }
+                    console.log(rows[0].avg + '******************');
+                    callback(null, dateData, deviceData, device_type, con);
+                }
+            });
+        },
+        function(urDateData, urdeviceData, device_type, con){
+            console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ DEVICE TYPE $$$$$$$$$$$$$$$$$$$$$$$$$$"+device_type);
+            con.query("select date, averagevalues  from dailystatisticsalldevice where device_type =?",[device_type], function(err, result) {
+                if(err)
+                    console.log("Error Selecting456 : %s ",err );
+                else {
+                    console.log(result[0].avg + '%%%%%%%%%%%%%%%%');
+                    var industryValue = healthData.deveiceCriticalHealth();
+
+                    switch (device_type) {
+                        case 'tv' : industryValue = industryValue.tv;break;
+                        case 'refrigerator' : industryValue = industryValue.refrigerator;break;
+                        case 'washing_machine': industryValue = industryValue.washing_machine;break;
+                    }
+
+                    for(var i =0;i < result.length; i++) {
+                        overAllData.push(result[i].averagevalues);
+                        standardData.push(industryValue)
+
+                    }
+                    console.log('Check this value '+industryValue);
+                    var data = {
+                        "x"  : "x",
+                        "columns": [
+                            urDateData,
+                            urdeviceData,
+                            overAllData,
+                            standardData
+                        ],
+                        type: 'spline'
+                    }
+                    console.log(JSON.stringify(data) + '############');
+                    res.send(data);
+                    con.end();
+
+                }
+            })
+        }
+    ], function(err, data){
+        if(err) console.log(err);
+        console.log(data);
+    });
+}
+
 
 exports.getOverallUsage = function(req, res) {
     //var payload = req.body;

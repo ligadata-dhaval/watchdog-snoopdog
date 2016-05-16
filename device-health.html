@@ -38,7 +38,7 @@
 
 </head>
 
-<body id="meet-nest-thermostat" class="thermostat meet" ng-controller="AnalyticsController" ng-init="showGraph('dev1','refrigerator')">
+<body id="meet-nest-thermostat" class="thermostat meet" ng-controller="AnalyticsController" ng-init="showGraph('dev5','refrigerator')">
 <header id="main-header" class="header-bar content" data-swiftype-index="false">
     <div class="container"><a id="home-link" href="index.html" class="logo" title="Appliance Watchdog" itemprop="url">
         <img src="images/logo.jpg" style="margin-top: 25px" width="200px"></a>
@@ -90,70 +90,48 @@
     <!-- /.row -->
 
     <!-- Projects Row -->
-    <div class="row">
-        <div class="col-md-6 portfolio-item">
-            <a href="#">
-                <div id="chart"></div>
-            </a>
-            <h3>
-                <p>Average Usage of your device</p>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-        <div class="col-md-6 portfolio-item">
-            <a href="#">
-                <div id="chart1"></div>
-            </a>
-            <h3>
-                <a href="#">Average Usage of similar device</a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-        </div>
-    </div>
+
     <!-- /.row -->
 
     <!-- Projects Row -->
     <div class="row">
+        <div class="col-md-6 portfolio-item">
+            <div id="chart1"></div>
+            <!--<p>This is the overall comparison of your device with other devices of similar types and the industry standard values.</p>-->
+        </div>
         <div class="col-md-6 portfolio-item">
             <a href="#">
                 <div id="chart2"></div>
             </a>
-            <h3>
-                <a href="#">Project Three</a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
         </div>
-        <div class="col-md-6 portfolio-item">
-            <a href="#">
-                <div id="chart5"></div>
-            </a>
-            <h3>
-                <a href="#">Mean Time To Repair(MTTR)</a>
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+    </div>
+    <div class="row">
+        <div class="col-md-12 portfolio-item">
+            <h3>Overall Usage</h3>
+            <p>This is the overall comparison of your device with other devices of similar types and the industry standard values.</p>
         </div>
     </div>
     <!-- /.row -->
 
     <!-- Projects Row -->
-    <div class="row">
+    <div>
         <div class="col-md-6 portfolio-item">
             <a href="#">
                 <div id="chart4"></div>
             </a>
             <h3>
-                <a href="#">Mean Time to Failure (MTTF)</a>
+                Weekly Usage
             </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            <p>This is the weekly comparison of your device with other devices of similar types and the industry standard values.</p>
         </div>
         <div class="col-md-6 portfolio-item">
             <a href="#">
                 <div id="chart3"></div>
             </a>
             <h3>
-                <a href="#">Mean Time To Repair(MTTR)</a>
+                Monthly Usage
             </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            <p>This is the monthly comparison of your device with other devices of similar types and the industry standard values.</p>
         </div>
     </div>
     <!-- /.row -->

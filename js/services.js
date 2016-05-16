@@ -86,6 +86,14 @@ angular.module('watchdog')
         appfac.overallUsage = function(device_id, device_type){
             return $http.get(baseURL+"/devices/getOverallUsage/"+device_type+"/"+device_id);
         }
+
+        appfac.dateRangeData = function(device_id, device_type) {
+            return $http.get(baseURL+"/devices/getRangeDataUsage/"+device_type+"/"+device_id);
+        }
+
+        appfac.weekRangeData = function(device_id, device_type) {
+            return $http.get(baseURL+"/devices/weeklyUsage/"+device_type+"/"+device_id);
+        }
         return appfac;
     }]);
 

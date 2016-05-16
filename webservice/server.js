@@ -25,5 +25,8 @@ app.post('/devices', devices.addDeviceData);
 app.get('/devices/:channel', devices.getDeviceData);
 app.post('/devices/health', devices.getDeviceHealth)
 app.get('/devices/getOverallUsage/:deviceType/:deviceId/', devices.getOverallUsage);
+app.get('/devices/weeklyUsage/:deviceType/:deviceId/', devices.getWeeklyUsage);
+app.get('/devices/getRangeDataUsage/:deviceType/:deviceId/', devices.getDateUsage);
+
 
 console.log('Listening on port 4000...');
