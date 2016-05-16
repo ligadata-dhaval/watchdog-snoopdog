@@ -22,20 +22,6 @@
             fill-opacity: 0.8
         }
     </style>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/2-col-portfolio.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
 <body id="meet-nest-thermostat" class="thermostat meet" ng-controller="AnalyticsController" ng-init="showGraph()">
@@ -75,36 +61,21 @@
     </div>
 </header>
 
+    <!-- Page Content -->
+    <div class="container">
+    <br><br>
+        <!-- Projects Row -->
+        <div class="row">
+            <div class="col-md-12 portfolio-item">
+                <h3>
+                    <p>Device Details</p>
+                </h3>
+                <p>
+                    Device id:  {{applianceDetails.device_id}}<br>
+                    Device name:  {{applianceDetails.device_name}}<br>
+                    Channel name:  {{applianceDetails.channel_name}}<br>
+                    Device info:  {{applianceDetails.device_info}}</p>
 
-<!-- Page Content -->
-<div class="container">
-
-    <!--&lt;!&ndash; Page Header &ndash;&gt;-->
-    <!--<div class="row">-->
-        <!--<div class="col-lg-12">-->
-            <!--<h1 class="page-header">-->
-                <!--<small>Analytics</small>-->
-            <!--</h1>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!-- /.row -->
-
-    <!-- Projects Row -->
-
-    <div class="row">
-        <div class="col-md-12 portfolio-item">
-            <h3>
-                <p>Device Details</p>
-            </h3>
-            <p>
-                Device id:  {{applianceDetails.device_id}}<br>
-                Device name:  {{applianceDetails.device_name}}<br>
-                Channel name:  {{applianceDetails.channel_name}}<br>
-            Device info:  {{applianceDetails.device_info}}</p>
-
-            </p>
-        </div>
-    </div>
 
     <!-- /.row -->
 
@@ -125,8 +96,7 @@
             <h3>Overall Usage</h3>
             <p>This is the overall comparison of your device with other devices of similar types and the industry standard values.</p>
         </div>
-    </div>
-    <!-- /.row -->
+        <!-- /.row -->
 
     <!-- Projects Row -->
     <div>
@@ -148,13 +118,11 @@
             </h3>
             <p>This is the monthly comparison of your device with other devices of similar types and the industry standard values.</p>
         </div>
+        <!-- /.row -->
+        <!-- /.row -->
+        <br><br>
+
     </div>
-    <!-- /.row -->
-
-    <hr>
-
-
-    <hr>
     <footer id="footer" class="content wrapper ">
         <div class="container">
             <div class="nav-block">
@@ -252,21 +220,17 @@
             </ul>
         </div>
     </footer>
-
 </div>
-
-<!-- /.container -->
-<script src="js/fb.js"></script>
 <script src="js/angular.min.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/pubnub.min.js"></script>
+<script src="js/pubnub-c3.js"></script>
+<script src="js/d3.v3.min.js" charset="utf-8"></script>
+<script src="js/c3.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controllers.js"></script>
 <script src="js/services.js"></script>
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-<script src="js/d3.v3.min.js" charset="utf-8"></script>
-<script src="js/c3.min.js"></script>
-
+<script src="js/fb.js"></script>
 </body>
-
 </html>
