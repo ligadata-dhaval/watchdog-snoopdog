@@ -35,7 +35,7 @@ function checkLoginState() {
 
 window.fbAsyncInit = function() {
     FB.init({
-        appId      : '1784707148423811',
+        appId      : '609390279211434',
         cookie     : true,  // enable cookies to allow the server to access
                             // the session
         xfbml      : true,  // parse social plugins on this page
@@ -62,7 +62,7 @@ function testAPI() {
         console.log('Successful login for: ' + JSON.stringify(response));
         sessionStorage.setItem("userid", response.id);
         //document.getElementById('status').innerHTML 'Thanks for logging in, ' + response.name + '!';
-        window.location="device.html";
+        window.location="dashboard2.html";
     });
 }
 

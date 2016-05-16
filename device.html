@@ -53,6 +53,8 @@
                                  ng-repeat="appliance in appliances | filter: checked==false" style="padding: 10px">
                                     <a style="font-family: 'Quicksand', sans-serif;font-size: 20px; color: grey"
                                    href="dashboard2.html" ng-click="storeAppId(appliance.channel_name)">{{appliance.device_name}}</a><br>
+                                <a style ="font-family: 'Quicksand', sans-serif;font-size: 10px; color: black" href="#">Maintenance</a><a style ="font-family: 'Quicksand', sans-serif;font-size: 10px; color: black">&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+                                <a style ="font-family: 'Quicksand', sans-serif;font-size: 10px; color: black" href="#">Dead</a>
                                 <br><br>
                                 <img class="svg" src="{{appliance.image}}" width="200px" style="margin: 10px">
                             </div>
@@ -84,19 +86,22 @@
                                                ng-model="appliance.device_name"/><br/>
                                         <input class="form-control" placeholder="Channel Name" type="text"
                                                ng-model="appliance.channel_name"/><br/>
-                                        <input class="form-control" placeholder="Device Information" type="text"
+                                        <input class="form-control" placeholder="Device Information" type="textarea"
                                                ng-model="appliance.device_info"/><br/>
                                         <select class="form-control" ng-model="appliance.device_type">
                                             <option value="mobile">Mobile</option>
                                             <option value="tv">TV</option>
+                                            <option value="refrigerator">Refrigerator</option>
+                                            <option value="washing_machine">Washing Machine</option>
                                         </select>
+                                        Active
                                         <input type="checkbox" ng-model="appliance.status" value="Active"
-                                               style="padding-right: 30px"> Active<br/><br/>
-                                        <button type="submit" class="btn btn-primary" ng-click="add(appliance)"
-                                                value="Save">Submit Button
+                                               style="padding-right: 30px"> <br/><br/>
+                     0p                 <button type="submit" class="btn btn-primary" ng-click="add(appliance)"
+                                                value="Save">Submit
                                         </button>
                                         <button type="reset" class="btn btn-default" ng-click="reset()" value="Reset">
-                                            Reset Button
+                                            Reset
                                         </button>
                                     </form>
                                 </div>

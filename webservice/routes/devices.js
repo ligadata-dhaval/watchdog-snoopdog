@@ -37,11 +37,19 @@ exports.getOverallUsage = function(req, res) {
                     console.log("Error Selecting456 : %s ",err );
                 else {
                     console.log(result[0].avg + '%%%%%%%%%%%%%%%%');
+                    var industryValue = healthData.deveiceCriticalHealth();
 
+                    switch (device_type) {
+                        case 'tv' : industryValue = industryValue.tv;break;
+                        case 'refrigerator' : industryValue = industryValue.refrigerator;break;
+                        case 'washing_machine': industryValue = industryValue.washing_machine;break;
+                    }
+                    console.log('dsfsdfsdfsdfsdsdf'+industryValue);
                     var data = {
                         "columns": [
                             ['Your Device(Average Usage)', urdevice],
-                            ['All '+device_type+'(Average Usage)', result[0].avg]
+                            ['All '+device_type+'(Average Usage)', result[0].avg],
+                            ['Industry Standard (Average Usage)', industryValue]
                         ],
                             type: 'pie'
                     }

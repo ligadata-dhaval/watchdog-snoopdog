@@ -39,9 +39,15 @@ angular.module('watchdog',[])
            var app=angular.copy(appliance);
             if(app.device_type=="mobile"){
                 app.image="images/mobile.jpg"
-                app.timeline="mobiletimeline.html"
+                app.timeline="appliancetimeline.html"
             }else if(app.device_type=="tv"){
                 app.image="images/tv.jpg"
+                app.timeline="appliancetimeline.html"
+            }else if(app.device_type=="refrigerator"){
+                app.image="images/refrigerator.jpeg"
+                app.timeline="appliancetimeline.html"
+            }else if(app.device_type=="washing_machine"){
+                app.image="images/washingmachine.jpeg"
                 app.timeline="appliancetimeline.html"
             }
             app.checked=false;
@@ -171,7 +177,8 @@ angular.module('watchdog',[])
                         data: {
                             columns: [
                                 ['Your Device(Average Usage)', $scope.overallUsage.columns[0][1]],
-                                ['All '+device_type+' (Average Usage)', $scope.overallUsage.columns[1][1]]
+                                ['All '+device_type+' (Average Usage)', $scope.overallUsage.columns[1][1]],
+                                ['Industry Standard (Average Usage)', $scope.overallUsage.columns[2][1]]
                             ],
                             type: 'bar',
                             onclick: function (d, i) { console.log("onclick", d, i); },
@@ -213,21 +220,26 @@ angular.module('watchdog',[])
 
 
                     c3.generate({
-                        bindto:'#chart4',
+                        bindto:'#chart5',
                         data: {
                             columns: [
                                 ['Your Device', $scope.overallUsage.columns[0][1]],
-                                ['All '+device_type, $scope.overallUsage.columns[1][1]]
+                                ['All '+device_type, $scope.overallUsage.columns[1][1]],
+                                ['Industry Standard (Average Usage)', $scope.overallUsage.columns[2][1]]
                             ],
-                            type: 'bar',
+                            type: 'pie',
                             onclick: function (d, i) { console.log("onclick", d, i); },
                             onmouseover: function (d, i) { console.log("onmouseover", d, i); },
                             onmouseout: function (d, i) { console.log("onmouseout", d, i); }
                         },
-                        bar: {
+                        pie: {
                             label: {
                                 format: function (value, ratio, id) {
-                                    return d3.format('$')(value);
+                                    if(device_type=="refrigerator")
+                                        return d3.format('c')(value);
+                                    if(device_type=="tv")
+                                        return d3.format('hrs')(value);
+
                                 }
                             }
                         }
