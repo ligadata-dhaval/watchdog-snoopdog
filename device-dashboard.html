@@ -21,6 +21,16 @@
             fill: #dd3333;
             fill-opacity: 0.8
         }
+        hr.style-four {
+            height: 12px;
+            border: 0;
+            box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+        }
+        hr.style-three {
+            border: 0;
+            border-bottom: 1px dashed #ccc;
+            background: #999;
+        }
     </style>
 </head>
 
@@ -69,7 +79,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    <small>Health Dashboard</small>
+                    <h3>Health Dashboard</h3>
+                    <hr class="style-four"/>
                 </h1>
             </div>
         </div>
@@ -88,9 +99,9 @@
             <hr>
         </div>
         <!-- /.row -->
-
+        <hr class="style-four"/>
         <!-- Project One -->
-        <div class="row"  >
+        <div class="row" >
 
             <div class="col-md-7">
                 <div id="charttv"></div>
@@ -103,7 +114,7 @@
             <hr>
         </div>
         <!-- /.row -->
-
+        <hr class="style-four"/>
         <!-- Project One -->
         <div class="row">
             <div class="col-md-7">
@@ -117,7 +128,7 @@
             <hr>
         </div>
         <!-- /.row -->
-
+        <hr class="style-four"/>
 
     </div>
     <footer id="footer" class="content wrapper ">
@@ -126,79 +137,16 @@
                 <div class="left">
                     <ul role="menu" class="sub-nav">
                         <li role="menuitem">
-                            <div class="sub-head"><a id="store-menu"
-                                                     data-floodlight-cat="nestc424" class="sub-menu-title"
-                                                     data-track-label="Store" title="Store"> Store </a></div>
-                            <ul role="menu">
-                                <li role="menuitem"><a
-                                        data-track-label="Store - Thermostat"
-                                        title="Nest&nbsp;Thermostat"> Watchdog&nbsp; TV  </a></li>
-                                <li role="menuitem"><a
-                                        data-track-label="Store - Protect" title="Nest&nbsp;Protect">
-                                    Wwatchdog&nbsp;Mobile </a></li>
-                                <li role="menuitem"><a
-                                        data-track-label="Store - Camera" title="Nest&nbsp;Cam"> Watchdog&nbsp;Cam </a>
-                                </li>
-                                <li role="menuitem"><a id="store-menu"
-                                                       class="sub-menu-title" data-track-label="Store - Where To Buy"
-                                                       title="Where to&nbsp;buy"> Where to&nbsp;buy </a></li>
-                            </ul>
+
                         </li>
                     </ul>
-                    <ul role="menu" class="sub-nav">
-                        <li role="menuitem">
-                            <div class="sub-head">Company<span></span></div>
-                            <ul role="menu">
-                                <li role="menuitem"><a href="//nest.com/about/" class="" data-track-label="About us"
-                                                       title="About&nbsp;us"> About&nbsp;us </a></li>
-                                <li role="menuitem"><a href="//nest.com/blog/" class="" data-track-label="Blog"
-                                                       title="Blog"> Blog </a></li>
-                                <li role="menuitem"><a href="//nest.com/responsibility/" class=""
-                                                       data-track-label="Responsibility" title="Responsibility">
-                                    Responsibility </a></li>
-                                <li role="menuitem"><a href="https://nest.com/careers/" class=""
-                                                       data-track-label="Careers" title="Careers"> Careers </a></li>
-                                <li role="menuitem"><a class="sub-menu-title" href="//nest.com/press/"
-                                                       data-track-label="Press" title="Press"> Press </a></li>
-                                <li role="menuitem"><a class="sub-menu-title" href="https://community.nest.com/welcome"
-                                                       data-track-label="Community" title="Community"> Community </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+
                 </div>
                 <div class="right">
-                    <form action="" method="post"
-                          id="footer-email-signup" class="generic-signup"><input type="email" name="email"
-                                                                                 placeholder="Enter email for Watchdog&nbsp;news"
-                                                                                 title="Enter email for Nest&nbsp;news"/>
-                        <button class="signup-submit chevron" type="submit" title="Submit"><b>&gt;</b></button>
-                        <div class="secure-statement">Private, secure,&nbsp;spam-free.</div>
-                        <div class="message signup-invalid-email"><p><b>!</b>Please enter a valid email&nbsp;address.
-                        </p></div>
-                        <div class="message signup-server-error"><p><b>!</b>Oops! There was an error. Try&nbsp;again?
-                        </p></div>
-                        <div class="message signup-success"><p><b>&#x2713;</b>Success! Nest will keep you&nbsp;updated
-                        </p></div>
-                    </form>
                     <nav class="nl-locale-chooser">
-                        <ul class="locale" aria-haspopup="true" role="menu">
-                            <li role="menuitem"><a href="/choose-your-country/" class="nl-locale-chooser-link chevron"
-                                                   lang="en-US" title="Change your&nbsp;country"> <span class="flag"
-                                                                                                        role="img"
-                                                                                                        aria-label="Change"></span>
-                                <span class="locale-name"> Change&nbsp;<b>&gt;</b> </span> </a></li>
-                        </ul>
+
                     </nav>
-                    <div class="social"><a href="" title="Facebook">
-                        <div class="sprite facebook small" role="img" aria-label="Facebook"></div>
-                    </a> <a href="/" title="Twitter">
-                        <div class="sprite twitter small" role="img" aria-label="Twitter"></div>
-                    </a> <a href="" title="Pinterest">
-                        <div class="sprite pinterest small" role="img" aria-label="Pinterest"></div>
-                    </a> <a href="" rel="publisher" title="g+">
-                        <div class="sprite google-plus small" role="img" aria-label="g+"></div>
-                    </a></div>
+
                 </div>
             </div>
             <ul class="legal" role="menu">
@@ -229,25 +177,6 @@
 <script src="js/controllers.js"></script>
 <script src="js/services.js"></script>
 <script>
-    eon.chart({
-        channel: "refrigerator",
-        generate: {
-            bindto: '#chartrefrigerator',
-            data: {
-                type: 'gauge',
-            },
-            gauge: {
-                min: 0,
-                max: 100
-            },
-            color: {
-                pattern: ['#FF0000', '#F6C600', '#60B044'],
-                threshold: {
-                    values: [30, 60, 90]
-                }
-            }
-        }
-    });
     eon.chart({
         channel: "cpu",
         generate: {
@@ -287,6 +216,31 @@
             }
         }
     });
+
+
+
+    eon.chart({
+        history: true,
+        channel: 'refrigerator',
+        flow: true,
+        generate: {
+            bindto: '#chartrefrigerator',
+            data: {
+                x: 'x',
+                labels: false,
+                type : 'bar'
+            },
+            axis : {
+                x : {
+                    type : 'timeseries',
+                    tick: {
+                        format: '%H:%M:%S'
+                    }
+                }
+            }
+        }
+    });
+
 </script>
 <script src="js/fb.js"></script>
 </body>

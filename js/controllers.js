@@ -128,7 +128,11 @@ angular.module('watchdog',[])
                 .then(
                 function(response) {
                     console.log("Retrieving appliance usage");
-                    $scope.overallUsage = response.data;
+                    $scope.overallUsage = response.data.data;
+                    $scope.predictionMessage = response.data.message;
+                    if(device_type=="mobile"){
+                        $scope.predictionMessage = "";
+                    }
                     console.log("Appliance Usage"+JSON.stringify($scope.overallUsage));
 
                     //c3.generate({
@@ -211,24 +215,15 @@ angular.module('watchdog',[])
                             columns: [
                                 ['Your Device', $scope.overallUsage.columns[0][1]],
                                 ['All '+device_type, $scope.overallUsage.columns[1][1]],
-                                ['Industry Standard (Average Usage)', $scope.overallUsage.columns[2][1]]
                             ],
-                            type: 'pie',
+                            type : 'donut',
                             onclick: function (d, i) { console.log("onclick", d, i); },
                             onmouseover: function (d, i) { console.log("onmouseover", d, i); },
                             onmouseout: function (d, i) { console.log("onmouseout", d, i); }
                         },
-                        pie: {
-                            label: {
-                                format: function (value, ratio, id) {
-                                    if(device_type=="refrigerator")
-                                        return d3.format('c')(value);
-                                    if(device_type=="tv")
-                                        return d3.format('hrs')(value);
-
-                                }
-                            }
-                        }
+                        donut: {
+                        title: "Usage Comparison"
+                    }
 
                     });
 

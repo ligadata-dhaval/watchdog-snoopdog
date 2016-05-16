@@ -168,6 +168,7 @@ exports.getOverallUsage = function(req, res) {
     //var diff = payload.diff;
     var device_type = req.params.deviceType;
     var device_id = req.params.deviceId;
+    console.log("logging here");
 
     async.waterfall([
         function(callback){
@@ -188,21 +189,37 @@ exports.getOverallUsage = function(req, res) {
                     console.log("Error Selecting456 : %s ",err );
                 else {
                     console.log(result[0].avg + '%%%%%%%%%%%%%%%%');
+                    console.log("testing");
+
+
                     var industryValue = healthData.deveiceCriticalHealth();
+                    var coeff = coefficient.deviceCoefficient();
 
                     switch (device_type) {
-                        case 'tv' : industryValue = industryValue.tv;break;
-                        case 'refrigerator' : industryValue = industryValue.refrigerator;break;
-                        case 'washing_machine': industryValue = industryValue.washing_machine;break;
+                        case 'tv' : industryValue = industryValue.tv; coeff = coeff.tv; break;
+                        case 'mobile' : industryValue = industryValue.mobile; coeff = coeff.mobile; break;
+                        case 'refrigerator' : industryValue = industryValue.refrigerator; coeff = coeff.refrigerator; break;
+                        case 'washing_machine': industryValue = industryValue.washing_machine; coeff = coeff.washing_machine; break;
                     }
-                    console.log('dsfsdfsdfsdfsdsdf'+industryValue);
+
+
+
+
+
+
+
+                    console.log('dsfsdfsdfsdfsdsdf'+industryValue + coeff);
                     var data = {
-                        "columns": [
-                            ['Your Device(Average Usage)', urdevice],
-                            ['All '+device_type+'(Average Usage)', result[0].avg],
-                            ['Industry Standard (Average Usage)', industryValue]
-                        ],
+                        "data" : {
+                            "columns": [
+                                ['Your Device(Average Usage)', urdevice],
+                                ['All '+device_type+'(Average Usage)', result[0].avg],
+                                ['Industry Standard (Average Usage)', industryValue]
+                            ],
                             type: 'pie'
+
+                        },
+                        "message" : "Based on the usage patters and the coefficient, the shelf life of your device is "+Math.floor(coeff/urdevice) + " years"
                     }
                     console.log(JSON.stringify(data) + '############');
                     res.send(data);
