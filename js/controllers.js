@@ -5,9 +5,12 @@ angular.module('watchdog',[])
 
         $scope.appliances= [];
 
-        $scope.storeAppId=function(channel_id){
-            console.log("channel id is: "+channel_id)
-            sessionStorage.setItem("channel_id",channel_id)
+        $scope.storeAppId=function(appliance){
+        //    console.log("channel id is: "+channel_id)
+            //sessionStorage.setItem("channel_id",channel_id)
+            //sessionStorage.setItem("device_id",device_id)
+            //sessionStorage.setItem("device_type",device_type)
+                sessionStorage.setItem("appliance",JSON.stringify(appliance));
         }
 
         $scope.findByUserId=appFactory.getAppliances()
@@ -50,7 +53,7 @@ angular.module('watchdog',[])
                 app.image="images/washingmachine.jpeg"
                 app.timeline="appliancetimeline.html"
             }
-            app.device_id=Math.random() * 1000;
+            app.device_id=Math.floor(Math.random() * 1000);
             app.checked=false;
             app.userid=sessionStorage.getItem("userid");
 
@@ -111,7 +114,7 @@ angular.module('watchdog',[])
     }])
     .
     controller('AnalyticsController',['$scope','appFactory' , function($scope,appFactory) {
-
+        $scope.applianceDetails=JSON.parse(sessionStorage.getItem("appliance"));
         $scope.overallUsage = null;
         $scope.chart = null;
 
@@ -246,11 +249,6 @@ angular.module('watchdog',[])
                         }
 
                     });
-
-
-
-
-
                 }
             );
         }
