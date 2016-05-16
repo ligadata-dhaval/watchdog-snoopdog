@@ -53,7 +53,7 @@ angular.module('watchdog',[])
                 app.image="images/washingmachine.jpeg"
                 app.timeline="appliancetimeline.html"
             }
-            app.device_id=Math.floor(Math.random() * 1000);
+            //app.device_id=Math.floor(Math.random() * 1000);
             app.checked=false;
             app.userid=sessionStorage.getItem("userid");
 
